@@ -112,7 +112,6 @@
       <div class="product-info-sticky">
         <span class="section-label" id="prod-category"></span>
         <h1 id="prod-name"></h1>
-        <p class="product-subtitle" id="prod-subtitle"></p>
 
         <div class="divider"></div>
 
@@ -248,7 +247,6 @@
     document.getElementById('breadcrumb-name').textContent = product.nome;
     document.getElementById('prod-category').textContent   = catLabels[product.categoria] || product.categoria;
     document.getElementById('prod-name').textContent       = product.nome;
-    document.getElementById('prod-subtitle').textContent   = product.sottotitolo;
     document.getElementById('prod-description').textContent = product.descrizione;
 
     // Gallery
@@ -374,7 +372,6 @@
           <div class="product-card-info">
             <div class="product-category">${catLabels[p.categoria] || p.categoria}</div>
             <h3>${p.nome}</h3>
-            <div class="sub">${p.sottotitolo}</div>
           </div>
         </article>
       `).join('');
