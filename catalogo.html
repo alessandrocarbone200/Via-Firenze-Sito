@@ -70,10 +70,11 @@
       <img src="images/logo2.png" alt="Via Firenze — Italian Convertible Elegance" class="nav-logo-img" width="200" height="35" style="height:38px;width:auto;" fetchpriority="high">
     </a>
     <ul class="nav-menu">
-      <li><a href="index.html"    class="nav-link">Home</a></li>
-      <li><a href="catalogo.html" class="nav-link">Catalogo</a></li>
-      <li><a href="contatti.html" class="nav-link">Punti Vendita</a></li>
-      <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+      <li><a href="index.html"         class="nav-link">Home</a></li>
+      <li><a href="azienda.html"       class="nav-link">L'Azienda</a></li>
+      <li><a href="catalogo.html"      class="nav-link active">Catalogo</a></li>
+      <li><a href="punti-vendita.html" class="nav-link">Punti Vendita</a></li>
+      <li><a href="contatti.html"      class="nav-link">Contatti</a></li>
     </ul>
     <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -222,7 +223,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="images/logo2.png" alt="Via Firenze" loading="lazy" width="200" height="35" style="height:32px;width:auto;filter:brightness(0) invert(1);margin-bottom:16px;display:block;">
-        <p>Creiamo divani convertibili che uniscono eleganza italiana e funzionalità moderna. Italian Convertible Elegance dal 1978.</p>
+        <p>Italian Furniture Shop S.r.l.<br>Divani convertibili italiani di design artigianale — Italian Convertible Elegance.</p>
       </div>
       <div class="footer-col">
         <h4>Collezioni</h4>
@@ -233,25 +234,28 @@
       </div>
       <div class="footer-col">
         <h4>Azienda</h4>
-        <a href="#">Chi Siamo</a>
-        <a href="#">Sostenibilità</a>
-        <a href="#">Carriere</a>
+        <a href="azienda.html">Chi Siamo</a>
+        <a href="punti-vendita.html">Punti Vendita</a>
         <a href="admin.html">Area Admin</a>
       </div>
       <div class="footer-col footer-contact">
         <h4>Contatti</h4>
         <p>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Via Firenze, 200/B<br>47121 San Varano (FC)
+        </p>
+        <p>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .72h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.13 8.52a16 16 0 006.29 6.29l1.16-1.16a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +39 02 1234 5678
+          +39 320 952 3341
         </p>
         <p>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          info@viafirenze.it
+          commercialeitalianfurniture@gmail.com
         </p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Via Firenze S.r.l. — Tutti i diritti riservati</span>
+      <span>© 2026 Italian Furniture Shop S.r.l. — P.IVA 04136100403 — Tutti i diritti riservati</span>
       <span>
         <a href="/privacy-policy.html" style="color:inherit;">Privacy Policy</a> ·
         <a href="/cookie-policy.html"  style="color:inherit;">Cookie Policy</a>
@@ -337,7 +341,6 @@
           <div class="product-category">${catLabels[p.categoria] || p.categoria}</div>
           <h3>${p.nome}</h3>
           <div class="sub">${p.sottotitolo}</div>
-          <div class="product-price"><span class="from">da</span>${formatPrice(p.prezzoBase)}</div>
         </div>
       </article>
     `).join('');
