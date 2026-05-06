@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Admin — Via Firenze</title>
+  <!-- PWA / Favicon -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2C2C2C">
+  <link rel="icon" type="image/x-icon"  href="/images/logo/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+
+  <!-- Performance: preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .admin-login-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .admin-login-logo svg { height: 40px; }
+    .password-wrap {
+      position: relative;
+    }
+    .password-wrap input { padding-right: 44px; }
+    .password-toggle {
+      position: absolute;
+      right: 12px; top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--color-light);
+      cursor: pointer;
+      padding: 4px;
+      transition: color var(--transition);
+    }
+    .password-toggle:hover { color: var(--color-dark); }
+    .login-error {
+      background: #fdf0f0;
+      border: 1px solid #e0b0b0;
+      color: #c0392b;
+      padding: 12px 16px;
+      font-size: 0.84rem;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .admin-stat {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .admin-stat-icon {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: var(--color-beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+    .admin-stat-num  { font-family: var(--font-serif); font-size: 1.8rem; line-height: 1; }
+    .admin-stat-lbl  { font-size: 0.78rem; color: var(--color-light); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--color-beige);
+      color: var(--color-gold);
+    }
+    .img-preview-wrap {
+      width: 100%;
+      height: 120px;
+      background: var(--color-beige);
+      border: 1px dashed var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .img-preview-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .img-preview-wrap span { font-size: 0.78rem; color: var(--color-light); }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="admin-login" id="admin-login">
+  <div class="admin-login-card">
+    <div class="admin-login-logo">
+      <img src="images/logo2.png" alt="Via Firenze" class="nav-logo-img" style="height:38px;width:auto;">
+    </div>
+    <h2>Area Riservata</h2>
+    <p>Accedi con le tue credenziali per gestire il catalogo.</p>
+    <div class="login-error" id="login-error">Password errata. Riprova.</div>
+    <div class="form-group" style="text-align:left;">
+      <label for="login-user">Utente</label>
+      <input type="text" id="login-user" placeholder="admin" value="admin">
+    </div>
+    <div class="form-group" style="text-align:left;">
+      <label for="login-pass">Password</label>
+      <div class="password-wrap">
+        <input type="password" id="login-pass" placeholder="••••••••">
+        <button class="password-toggle" id="pass-toggle" aria-label="Mostra/nascondi password">
+          <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px;" id="login-btn">
+      Accedi
+    </button>
+    <p style="margin-top:20px; font-size:0.76rem; color:var(--color-light);">
+      Password di default: <strong>admin123</strong>
+    </p>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="admin-panel">
+
+  <!-- Admin Header -->
+  <div class="admin-header">
+    <h1>
+      <img src="images/logo2.png" alt="Via Firenze" style="height:28px;width:auto;filter:brightness(0) invert(1);vertical-align:middle;margin-right:12px;">
+      Via Firenze — Pannello Admin
+    </h1>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <a href="index.html" style="font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:0.08em; text-transform:uppercase; font-weight:700;">
+        ← Vai al sito
+      </a>
+      <button class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.3); padding:8px 18px; font-size:0.72rem;" id="logout-btn">
+        Esci
+      </button>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div style="background:var(--color-white); border-bottom:1px solid var(--color-border); padding:16px 40px;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+      <div class="admin-stat">
+        <div class="admin-stat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg>
+        </div>
+        <div>
+          <div class="admin-stat-num" id="stat-total">0</div>
+          <div class="admin-stat-lbl">Prodotti</div>
+        </div>
+      </div>
+      <div class="admin-stat">
+        <div class="admin-stat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div>
+          <div class="admin-stat-num" id="stat-featured">0</div>
+          <div class="admin-stat-lbl">In Evidenza</div>
+        </div>
+      </div>
+      <div class="admin-stat">
+        <div class="admin-stat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div>
+          <div class="admin-stat-num" id="stat-min-price">—</div>
+          <div class="admin-stat-lbl">Prezzo min.</div>
+        </div>
+      </div>
+      <div class="admin-stat">
+        <div class="admin-stat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div>
+          <div class="admin-stat-num" id="stat-categories">0</div>
+          <div class="admin-stat-lbl">Categorie</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="admin-body">
+
+    <!-- ADD PRODUCT FORM -->
+    <div>
+      <div class="admin-form-card">
+        <h3>Aggiungi nuovo prodotto</h3>
+        <div class="form-group">
+          <label for="a-nome">Nome prodotto *</label>
+          <input type="text" id="a-nome" placeholder="Es. Bergamo">
+        </div>
+        <div class="form-group">
+          <label for="a-sottotitolo">Sottotitolo *</label>
+          <input type="text" id="a-sottotitolo" placeholder="Es. Divano 2 posti in velluto">
+        </div>
+        <div class="form-group">
+          <label for="a-categoria">Categoria *</label>
+          <select id="a-categoria">
+            <option value="">— Seleziona —</option>
+            <option value="2-posti">Divano 2 Posti</option>
+            <option value="3-posti">Divano 3 Posti</option>
+            <option value="angolare">Divano Angolare</option>
+            <option value="letto">Divano Letto</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="a-prezzo">Prezzo base (€) *</label>
+          <input type="number" id="a-prezzo" placeholder="Es. 1299" min="1">
+        </div>
+        <div class="form-group">
+          <label for="a-tessuti">Tessuti disponibili</label>
+          <input type="text" id="a-tessuti" placeholder="Es. Velluto, Lino, Pelle (separati da virgola)">
+        </div>
+        <div class="form-group">
+          <label for="a-colori">Colori disponibili</label>
+          <input type="text" id="a-colori" placeholder="Es. Grigio Perla, Blu Oceano (separati da virgola)">
+        </div>
+        <div class="form-group">
+          <label>Immagine principale</label>
+          <div class="img-preview-wrap" id="img-preview-wrap">
+            <span>Anteprima immagine</span>
+          </div>
+          <input type="url" id="a-immagine" placeholder="URL immagine (es. https://picsum.photos/seed/mio/900/600)">
+        </div>
+        <div class="form-group">
+          <label for="a-descrizione">Descrizione</label>
+          <textarea id="a-descrizione" placeholder="Descrivi il prodotto..."></textarea>
+        </div>
+        <div class="form-group" style="display:flex; align-items:center; gap:10px;">
+          <input type="checkbox" id="a-featured" style="width:16px; height:16px; accent-color:var(--color-dark);">
+          <label for="a-featured" style="text-transform:none; letter-spacing:0; font-weight:400; font-size:0.9rem; cursor:pointer;">
+            Mostra nella homepage (In evidenza)
+          </label>
+        </div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" id="add-product-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Aggiungi Prodotto
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCTS LIST -->
+    <div>
+      <div class="admin-products-card">
+        <h3>Prodotti nel catalogo (<span id="products-count">0</span>)</h3>
+        <div id="admin-products-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // ── showPanel è chiamata da admin-auth.js dopo login riuscito ──
+  function showPanel() {
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    refreshUI();
+  }
+
+  // ── Image preview ─────────────────────────────────────────────
+  document.getElementById('a-immagine').addEventListener('input', function() {
+    const wrap = document.getElementById('img-preview-wrap');
+    if (this.value) {
+      wrap.innerHTML = `<img src="${this.value}" alt="Anteprima" onerror="this.parentElement.innerHTML='<span style=color:var(--color-light)>URL non valido</span>'">`;
+    } else {
+      wrap.innerHTML = '<span>Anteprima immagine</span>';
+    }
+  });
+
+  // ── Add product ───────────────────────────────────────────────
+  document.getElementById('add-product-btn').addEventListener('click', () => {
+    const nome       = document.getElementById('a-nome').value.trim();
+    const sottotit   = document.getElementById('a-sottotitolo').value.trim();
+    const categoria  = document.getElementById('a-categoria').value;
+    const prezzo     = parseFloat(document.getElementById('a-prezzo').value);
+    const immagine   = document.getElementById('a-immagine').value.trim();
+
+    if (!nome || !sottotit || !categoria || !prezzo) {
+      showToast('Compila tutti i campi obbligatori (*).');
+      return;
+    }
+
+    const tessuti = document.getElementById('a-tessuti').value
+      .split(',').map(s => s.trim()).filter(Boolean);
+    const colori  = document.getElementById('a-colori').value
+      .split(',').map(s => s.trim()).filter(Boolean);
+    const desc    = document.getElementById('a-descrizione').value.trim();
+    const featured = document.getElementById('a-featured').checked;
+    const imgUrl  = immagine || `https://picsum.photos/seed/${nome.toLowerCase()}/900/600`;
+
+    const newProduct = {
+      nome,
+      sottotitolo: sottotit,
+      descrizione: desc || 'Descrizione non disponibile.',
+      prezzoBase: prezzo,
+      categoria,
+      tessuti: tessuti.length ? tessuti : ['Tessuto Standard'],
+      colori:  colori.length  ? colori  : ['Colore Standard'],
+      immagini: [imgUrl, imgUrl, imgUrl],
+      featured
+    };
+
+    addProduct(newProduct);
+    showToast(`"${nome}" aggiunto con successo!`);
+    clearForm();
+    refreshUI();
+  });
+
+  function clearForm() {
+    ['a-nome','a-sottotitolo','a-prezzo','a-tessuti','a-colori','a-immagine','a-descrizione'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('a-categoria').value = '';
+    document.getElementById('a-featured').checked = false;
+    document.getElementById('img-preview-wrap').innerHTML = '<span>Anteprima immagine</span>';
+  }
+
+  // ── Render product list ───────────────────────────────────────
+  const catLabels = { '2-posti':'2 Posti', '3-posti':'3 Posti', 'angolare':'Angolare', 'letto':'Letto' };
+
+  function refreshUI() {
+    const products = getProducts();
+
+    // Stats
+    document.getElementById('stat-total').textContent    = products.length;
+    document.getElementById('stat-featured').textContent = products.filter(p => p.featured).length;
+    const prices = products.map(p => p.prezzoBase);
+    document.getElementById('stat-min-price').textContent = prices.length ? '€' + Math.min(...prices) : '—';
+    document.getElementById('stat-categories').textContent = new Set(products.map(p => p.categoria)).size;
+
+    // List
+    const list = document.getElementById('admin-products-list');
+    document.getElementById('products-count').textContent = products.length;
+
+    if (products.length === 0) {
+      list.innerHTML = '<p style="color:var(--color-light); padding:20px 0; text-align:center;">Nessun prodotto nel catalogo.</p>';
+      return;
+    }
+
+    list.innerHTML = products.map(p => `
+      <div class="admin-product-row">
+        <img class="admin-product-img" src="${p.immagini[0]}" alt="${p.nome}"
+          onerror="this.style.background='var(--color-beige)'">
+        <div class="admin-product-info">
+          <strong>${p.nome}</strong>
+          <span>${catLabels[p.categoria] || p.categoria} · ${formatPrice(p.prezzoBase)}
+            ${p.featured ? '<span class="tag" style="margin-left:6px;">★ Evidenza</span>' : ''}
+          </span>
+        </div>
+        <a href="prodotto.html?id=${p.id}" target="_blank" style="font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-gold); white-space:nowrap; flex-shrink:0;">
+          Vedi →
+        </a>
+        <button class="btn-delete" onclick="handleDelete(${p.id}, '${p.nome.replace(/'/g,"\\'")}')">Elimina</button>
+      </div>
+    `).join('');
+  }
+
+  function handleDelete(id, nome) {
+    if (!confirm(`Sei sicuro di voler eliminare "${nome}"? L'operazione non è reversibile.`)) return;
+    deleteProduct(id);
+    showToast(`"${nome}" eliminato.`);
+    refreshUI();
+  }
+
+</script>
+<!-- admin-auth.js gestisce login, rate limiting e session check -->
+<script src="js/admin-auth.js"></script>
+<script src="js/cookies.js"></script>
+<script src="js/performance.js"></script>
+</body>
+</html>

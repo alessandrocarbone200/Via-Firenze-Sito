@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary -->
+  <title>Scheda Prodotto | VIA FIRENZE</title>
+  <meta name="description" content="Scopri i dettagli, i materiali e le configurazioni disponibili per i divani VIA FIRENZE. Richiedi un preventivo personalizzato.">
+  <link rel="canonical" href="https://viafirenze.it/prodotto.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="product">
+  <meta property="og:url"         content="https://viafirenze.it/prodotto.html">
+  <meta property="og:title"       content="Scheda Prodotto | VIA FIRENZE">
+  <meta property="og:description" content="Scopri i dettagli, i materiali e le configurazioni disponibili per i divani VIA FIRENZE. Richiedi un preventivo personalizzato.">
+  <meta property="og:image"       content="https://viafirenze.it/images/og-image.jpg">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="VIA FIRENZE">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Scheda Prodotto | VIA FIRENZE">
+  <meta name="twitter:description" content="Scopri i dettagli, i materiali e le configurazioni disponibili per i divani VIA FIRENZE. Richiedi un preventivo personalizzato.">
+  <meta name="twitter:image"       content="https://viafirenze.it/images/og-image.jpg">
+
+  <!-- PWA / Favicon -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2C2C2C">
+  <link rel="icon" type="image/x-icon"  href="/images/logo/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+
+  <!-- Performance: preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="images/logo2.png">
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Structured Data: Product (dati statici di fallback, sostituiti dinamicamente da JS) -->
+  <script type="application/ld+json" id="ld-product">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "brand": {
+      "@type": "Brand",
+      "name": "VIA FIRENZE"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo2.png" alt="Via Firenze — Italian Convertible Elegance" class="nav-logo-img" width="200" height="35" style="height:38px;width:auto;" fetchpriority="high">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="catalogo.html" class="nav-link">Catalogo</a></li>
+      <li><a href="contatti.html" class="nav-link">Punti Vendita</a></li>
+      <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PRODUCT NOT FOUND -->
+<div id="not-found" class="hidden" style="padding: 160px 0 80px; text-align:center;">
+  <div class="container">
+    <span class="section-label">Errore 404</span>
+    <h2 style="margin-bottom:16px;">Prodotto non trovato</h2>
+    <p style="color:var(--color-mid); margin-bottom:32px;">Il prodotto che stai cercando non esiste o è stato rimosso.</p>
+    <a href="catalogo.html" class="btn btn-primary">Torna al Catalogo</a>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<main id="product-main" class="hidden">
+  <div style="padding-top: 72px; background: var(--color-off-white); border-bottom: 1px solid var(--color-border); padding-bottom: 0;">
+    <div class="container" style="padding-top: 20px; padding-bottom: 0;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="justify-content:flex-start; margin-bottom:0;">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="catalogo.html">Catalogo</a>
+        <span>›</span>
+        <span id="breadcrumb-name" aria-current="page"></span>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+
+      <!-- GALLERY -->
+      <div>
+        <div class="gallery-main">
+          <img id="gallery-main-img" src="" alt="Immagine principale prodotto" width="800" height="600" fetchpriority="high">
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs"></div>
+      </div>
+
+      <!-- INFO -->
+      <div class="product-info-sticky">
+        <span class="section-label" id="prod-category"></span>
+        <h1 id="prod-name"></h1>
+        <p class="product-subtitle" id="prod-subtitle"></p>
+
+        <div class="product-price-block">
+          <span class="price-from">da</span>
+          <span class="price-amount" id="prod-price"></span>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- CONFIGURATOR -->
+        <div class="configurator">
+          <h4>Numero di posti</h4>
+          <div class="option-chips" id="posti-chips"></div>
+
+          <h4>Rivestimento</h4>
+          <div class="option-chips" id="tessuto-chips"></div>
+
+          <h4>Colore</h4>
+          <div class="color-swatches" id="color-swatches"></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- CTA -->
+        <div class="cta-block">
+          <button class="btn btn-primary" id="btn-preventivo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Richiedi Preventivo
+          </button>
+          <a href="contatti.html" class="btn btn-outline" style="width:100%; justify-content:center;">
+            Prenota una Consulenza
+          </a>
+          <p class="cta-note" style="margin-top:16px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Consegna e montaggio gratuiti · Garanzia 10 anni
+          </p>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="divider"></div>
+        <div class="product-description">
+          <h4>Descrizione</h4>
+          <p id="prod-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="section section-alt" id="related-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Potrebbe interessarti</span>
+        <h2>Prodotti Correlati</h2>
+      </div>
+      <div class="products-grid" id="related-grid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- PREVENTIVO MODAL -->
+<div class="modal-overlay" id="modal-preventivo" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" id="modal-close" aria-label="Chiudi">&times;</button>
+    <span class="section-label">Richiesta Preventivo</span>
+    <h3 id="modal-title">Invia la tua richiesta</h3>
+    <p>Compila il modulo e ti contatteremo entro 24 ore con un preventivo personalizzato.</p>
+
+    <div id="modal-form-wrap">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="m-nome">Nome *</label>
+          <input type="text" id="m-nome" placeholder="Mario">
+        </div>
+        <div class="form-group">
+          <label for="m-cognome">Cognome *</label>
+          <input type="text" id="m-cognome" placeholder="Rossi">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="m-email">Email *</label>
+        <input type="email" id="m-email" placeholder="mario.rossi@email.it">
+      </div>
+      <div class="form-group">
+        <label for="m-tel">Telefono</label>
+        <input type="tel" id="m-tel" placeholder="+39 333 123 4567">
+      </div>
+      <div class="form-group">
+        <label for="m-config">Configurazione selezionata</label>
+        <input type="text" id="m-config" readonly style="background:var(--color-off-white); color:var(--color-mid);">
+      </div>
+      <div class="form-group">
+        <label for="m-note">Note aggiuntive</label>
+        <textarea id="m-note" placeholder="Eventuali richieste particolari o domande..."></textarea>
+      </div>
+      <button class="btn btn-primary" style="width:100%; justify-content:center; padding:16px;" id="modal-submit">
+        Invia Richiesta
+      </button>
+    </div>
+
+    <div class="form-success" id="modal-success">
+      <div class="form-success-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h3 style="margin-bottom:8px;">Richiesta inviata!</h3>
+      <p style="color:var(--color-mid);">Ti contatteremo entro 24 ore con il tuo preventivo personalizzato.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const catLabels = { '2-posti':'Divano 2 Posti', '3-posti':'Divano 3 Posti', 'angolare':'Divano Angolare', 'letto':'Divano Letto' };
+  const swatchColors = {
+    'Grigio Perla':'#C8C8C0', 'Blu Oceano':'#3A5F8A', 'Verde Salvia':'#7A9B7A',
+    'Beige Sabbia':'#D4C4A0', 'Ecru Naturale':'#EDE8D8', 'Grigio Antracite':'#4A4A42',
+    'Tortora':'#C0B09A', 'Bianco Puro':'#F5F5F0', 'Antracite':'#38383A',
+    'Grigio Chiaro':'#A8A8A0', 'Beige Cammello':'#C8A87A', 'Nero':'#1A1A1A',
+    'Grigio Nebbia':'#9A9A98', 'Blu Denim':'#4A6888', 'Écru':'#EDE0C8',
+    'Cognac':'#A0622A', 'Nero Ebano':'#1C1010', 'Bianco Avorio':'#F0EDE0',
+    'Marrone Cioccolato':'#5A3020', 'Verde Bottiglia':'#2A5038', 'Bordeaux':'#722038',
+    'Blu Navy':'#1A2A50'
+  };
+
+  let selectedConfig = { posti: null, tessuto: null, colore: null };
+
+  const urlId = new URLSearchParams(location.search).get('id');
+  const product = getProductById(urlId);
+
+  if (!product) {
+    document.getElementById('not-found').classList.remove('hidden');
+  } else {
+    document.title = `${product.nome} — Via Firenze`;
+    document.getElementById('product-main').classList.remove('hidden');
+    document.getElementById('breadcrumb-name').textContent = product.nome;
+    document.getElementById('prod-category').textContent   = catLabels[product.categoria] || product.categoria;
+    document.getElementById('prod-name').textContent       = product.nome;
+    document.getElementById('prod-subtitle').textContent   = product.sottotitolo;
+    document.getElementById('prod-price').textContent      = formatPrice(product.prezzoBase);
+    document.getElementById('prod-description').textContent = product.descrizione;
+
+    // Gallery
+    const mainImg = document.getElementById('gallery-main-img');
+    mainImg.src = product.immagini[0];
+    mainImg.alt = product.nome;
+
+    const thumbsEl = document.getElementById('gallery-thumbs');
+    product.immagini.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+      div.innerHTML = `<img src="${src}" alt="${product.nome} vista ${i+1}" loading="lazy">`;
+      div.addEventListener('click', () => {
+        mainImg.style.opacity = '0';
+        setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 150);
+        thumbsEl.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+        div.classList.add('active');
+      });
+      thumbsEl.appendChild(div);
+    });
+
+    // Posti chips
+    const postiMap = { '2-posti': ['2 Posti'], '3-posti': ['3 Posti'], 'angolare': ['2+3 Posti', '3+3 Posti'], 'letto': ['2 Posti', '2.5 Posti'] };
+    const postiOptions = postiMap[product.categoria] || ['2 Posti', '3 Posti'];
+    renderChips('posti-chips', postiOptions, 'posti');
+
+    // Tessuto chips
+    renderChips('tessuto-chips', product.tessuti, 'tessuto');
+
+    // Color swatches
+    const swatchEl = document.getElementById('color-swatches');
+    product.colori.forEach((colore, i) => {
+      const hexColor = swatchColors[colore] || '#CCCCCC';
+      const div = document.createElement('div');
+      div.className = 'color-swatch' + (i === 0 ? ' selected' : '');
+      div.title = colore;
+      div.innerHTML = `
+        <div class="swatch-circle" style="background:${hexColor};"></div>
+        <span class="swatch-label">${colore.split(' ')[0]}</span>
+      `;
+      div.addEventListener('click', () => {
+        swatchEl.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+        div.classList.add('selected');
+        selectedConfig.colore = colore;
+      });
+      if (i === 0) selectedConfig.colore = colore;
+      swatchEl.appendChild(div);
+    });
+
+    // Related products
+    const all     = getProducts();
+    const related = all.filter(p => p.id !== product.id && p.categoria === product.categoria).slice(0, 3);
+    const relGrid = document.getElementById('related-grid');
+    if (related.length > 0) {
+      relGrid.innerHTML = related.map(p => `
+        <article class="product-card" onclick="location.href='prodotto.html?id=${p.id}'" style="cursor:pointer;">
+          <div class="product-card-img">
+            <img src="${p.immagini[0]}" alt="${p.nome}" loading="lazy">
+            <button class="product-card-quick" onclick="event.stopPropagation(); location.href='prodotto.html?id=${p.id}'">Vedi Dettagli</button>
+          </div>
+          <div class="product-card-info">
+            <div class="product-category">${catLabels[p.categoria] || p.categoria}</div>
+            <h3>${p.nome}</h3>
+            <div class="sub">${p.sottotitolo}</div>
+            <div class="product-price"><span class="from">da</span>${formatPrice(p.prezzoBase)}</div>
+          </div>
+        </article>
+      `).join('');
+    } else {
+      document.getElementById('related-section').style.display = 'none';
+    }
+  }
+
+  function renderChips(containerId, options, key) {
+    const el = document.getElementById(containerId);
+    options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'chip' + (i === 0 ? ' selected' : '');
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        el.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedConfig[key] = opt;
+      });
+      if (i === 0) selectedConfig[key] = opt;
+      el.appendChild(btn);
+    });
+  }
+
+  // Modal
+  const modal       = document.getElementById('modal-preventivo');
+  const btnPrev     = document.getElementById('btn-preventivo');
+  const modalClose  = document.getElementById('modal-close');
+  const modalSubmit = document.getElementById('modal-submit');
+
+  btnPrev.addEventListener('click', () => {
+    const config = [
+      selectedConfig.posti   && `${selectedConfig.posti}`,
+      selectedConfig.tessuto && selectedConfig.tessuto,
+      selectedConfig.colore  && selectedConfig.colore
+    ].filter(Boolean).join(' · ');
+    document.getElementById('m-config').value = `${product ? product.nome : ''} — ${config}`;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  modalSubmit.addEventListener('click', () => {
+    const nome  = document.getElementById('m-nome').value.trim();
+    const email = document.getElementById('m-email').value.trim();
+    if (!nome || !email) { showToast('Compila nome e email per continuare.'); return; }
+    document.getElementById('modal-form-wrap').style.display = 'none';
+    document.getElementById('modal-success').style.display = 'block';
+    setTimeout(closeModal, 3000);
+  });
+</script>
+<script src="js/cookies.js"></script>
+<script src="js/performance.js"></script>
+
+<!-- Structured Data: Product dinamico — legge i dati da data.js -->
+<script>
+(function () {
+  const urlId  = new URLSearchParams(location.search).get('id');
+  const prod   = typeof getProductById === 'function' ? getProductById(urlId) : null;
+  if (!prod) return;
+
+  const baseUrl  = 'https://viafirenze.it/';
+  const imageUrl = prod.immagini && prod.immagini[0]
+    ? baseUrl + prod.immagini[0]
+    : baseUrl + 'images/logo/logo.png';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    'name': prod.nome + ' — ' + (prod.sottotitolo || 'Divano VIA FIRENZE'),
+    'description': prod.descrizione || '',
+    'image': imageUrl,
+    'sku': 'VF-' + prod.id,
+    'brand': {
+      '@type': 'Brand',
+      'name': 'VIA FIRENZE'
+    },
+    'offers': {
+      '@type': 'Offer',
+      'url': baseUrl + 'prodotto.html?id=' + prod.id,
+      'priceCurrency': 'EUR',
+      'price': prod.prezzoBase,
+      'priceValidUntil': new Date(new Date().getFullYear() + 1, 0, 1).toISOString().split('T')[0],
+      'availability': 'https://schema.org/InStock',
+      'seller': {
+        '@type': 'Organization',
+        'name': 'VIA FIRENZE'
+      }
+    }
+  };
+
+  // Sovrascrive il tag <script id="ld-product"> con i dati reali del prodotto
+  const tag = document.getElementById('ld-product');
+  if (tag) tag.textContent = JSON.stringify(schema, null, 2);
+})();
+</script>
+</body>
+</html>
