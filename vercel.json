@@ -2,14 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
 
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.viafirenze.it" }],
-      "destination": "https://viafirenze.it/:path*",
-      "permanent": true
-    }
-  ],
+  "redirects": [],
 
   "headers": [
     {
