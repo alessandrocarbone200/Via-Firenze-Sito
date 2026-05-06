@@ -249,37 +249,41 @@
 
     // Scheda tecnica
     const st = product.schedaTecnica;
-    if (st) {
-      const campiInfo = [
-        ['Struttura', st.struttura],
-        ['Materasso', st.materasso],
-        ['Seduta', st.seduta],
-        ['Schienale', st.schienale],
-        ['Rivestimento', st.rivestimento]
-      ].filter(([, v]) => v && v !== '—');
+    if (st && st.materiali && st.composizione) {
+      const materialiHtml = st.materiali.map(m =>
+        `<li style="padding:6px 0; border-bottom:1px solid var(--color-border); color:var(--color-mid); font-size:.92rem; line-height:1.5;">• ${m}</li>`
+      ).join('');
 
-      const misureRows = Array.isArray(st.misure) && st.misure.length > 0
-        ? st.misure.map(m => `<tr><td style="padding:8px 16px 8px 0; color:var(--color-mid);">${m}</td></tr>`).join('')
-        : '';
+      const composizioneRows = st.composizione.map((r, i) => `
+        <tr style="background:${i % 2 === 0 ? 'var(--color-off-white)' : '#fff'};">
+          <td style="padding:10px 16px; font-size:.88rem; color:var(--color-mid);">${r.nome}</td>
+          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600;">${r.lunghezza}</td>
+          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600;">${r.profondita}</td>
+          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600;">${r.altezza}</td>
+        </tr>
+      `).join('');
 
       document.getElementById('scheda-content').innerHTML = `
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;">
           <div>
-            <table style="width:100%; border-collapse:collapse;">
-              ${campiInfo.map(([k,v]) => `
-                <tr style="border-bottom:1px solid var(--color-border);">
-                  <td style="padding:10px 16px 10px 0; font-weight:600; font-size:.9rem; white-space:nowrap; min-width:130px;">${k}</td>
-                  <td style="padding:10px 0; color:var(--color-mid); font-size:.9rem;">${v}</td>
-                </tr>
-              `).join('')}
-            </table>
+            <ul style="list-style:none; padding:0; margin:0;">
+              ${materialiHtml}
+            </ul>
           </div>
-          <div>
-            <p style="font-weight:600; font-size:.9rem; margin-bottom:12px;">Misure disponibili</p>
-            <table style="width:100%; border-collapse:collapse;">
-              ${misureRows}
+          <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; border:1px solid var(--color-border);">
+              <thead>
+                <tr style="background:var(--color-dark); color:#fff;">
+                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:left; text-transform:uppercase;">Composizione</th>
+                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:center; text-transform:uppercase;">Lunghezza cm</th>
+                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:center; text-transform:uppercase;">Profondità cm</th>
+                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:center; text-transform:uppercase;">Altezza cm</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${composizioneRows}
+              </tbody>
             </table>
-            ${st.misureLetto ? `<p style="margin-top:16px; font-size:.85rem; color:var(--color-mid);"><strong style="color:var(--color-dark);">Zona notte:</strong> ${st.misureLetto}</p>` : ''}
           </div>
         </div>
       `;

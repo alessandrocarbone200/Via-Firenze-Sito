@@ -1,7 +1,7 @@
 // ============================================================
 //  VIA FIRENZE — Dati prodotti
 //  FONTE UNICA: Catalogo ViaFirenze 2026 (CAT_26_web.pdf)
-//  Non modificare descrizioni senza consultare il catalogo.
+//  Non modificare descrizioni o misure senza consultare il catalogo.
 // ============================================================
 
 const DEFAULT_PRODUCTS = [
@@ -11,69 +11,76 @@ const DEFAULT_PRODUCTS = [
   {
     id: 2,
     nome: "Arthur",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in legno massello e pannello truciolare. Seduta in poliuretano espanso ad alta portanza (30 kg/m³). Schienale in fiocco poliuretano 25 kg/m³. Materasso da 15 cm, densità 30 kg/m³. Rivestimento in tessuto. Piedi in wengé.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
     categoria: "2-posti",
     immagini: ["images/arthur.jpg", "images/arthur_aperto.jpg", "images/arthur_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Legno massello e pannello truciolare",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Fiocco poliuretano 25 kg/m³",
-      rivestimento: "Tessuto — piedi in wengé",
-      misure: [
-        "L 120 × P 165 × H 109 cm",
-        "L 140 × P 185 × H 109 cm",
-        "L 160 × P 205 × H 109 cm"
+      materiali: [
+        "Struttura in legno massello e truciolare",
+        "Rete a doghe elettrosaldate e cinghie sotto la seduta",
+        "Materasso da 15 cm di spessore con schiuma di densità 30 kg/m³",
+        "Seduta in schiuma di poliuretano espanso di densità 30 kg/m³",
+        "Schienale in fiocco di poliuretano",
+        "Rivestimento in tessuto",
+        "Piedi in legno tinta wengé"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 165, profondita: "92/205", altezza: 109 },
+        { nome: "divano/letto — materasso 140", lunghezza: 185, profondita: "92/205", altezza: 109 },
+        { nome: "divano/letto — materasso 160", lunghezza: 205, profondita: "92/205", altezza: 109 }
+      ]
     }
   },
 
   {
     id: 3,
     nome: "Giulia",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³. Materasso da 20 cm, densità 28 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in legno massello di faggio e truciolare. Meccanismo Rapidlit. Materasso da 20 cm — il più spesso della collezione. Disponibile in tessuto o pelle.",
     categoria: "2-posti",
     immagini: ["images/giulia.jpg", "images/giulia_detail.jpg"],
     featured: true,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 20 cm — densità 28 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 175 × H 85 cm",
-        "L 140 × P 195 × H 85 cm",
-        "L 160 × P 215 × H 85 cm"
+      materiali: [
+        "Struttura in legno massello di faggio e truciolare",
+        "Rete a doghe elettrosaldata e cinghie sotto la seduta",
+        "Materasso spesso 20 cm con schiuma di densità 28 kg/m³",
+        "Cuscino di seduta in schiuma di poliuretano di densità 30 kg/m³",
+        "Schienale e braccioli in schiuma di poliuretano di densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 215, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
   {
     id: 8,
     nome: "Myto",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta e schienale in poliuretano espanso 25 kg/m³. Materasso da 13 cm, densità 21 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "2-posti",
     immagini: ["images/myto.jpg", "images/myto_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 13 cm — densità 21 kg/m³",
-      seduta: "Poliuretano espanso 25 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 164 × H 85 cm",
-        "L 140 × P 184 × H 85 cm",
-        "L 160 × P 204 × H 85 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sulla seduta",
+        "Materasso spesso 13 cm con schiuma di densità 21 kg/m³",
+        "Cuscino di seduta in poliuretano espanso di densità 25 kg/m³",
+        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 164, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 184, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 204, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
@@ -82,92 +89,101 @@ const DEFAULT_PRODUCTS = [
   {
     id: 1,
     nome: "Colosseo",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e truciolato. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³, con poggiatesta, braccioli e cuscini. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolato. Meccanismo Rapidlit. Dotato di poggiatesta regolabile. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
     immagini: ["images/colosseo.jpg", "images/colosseo_aperto.jpg", "images/colosseo_detail.jpg"],
     featured: true,
     schedaTecnica: {
-      struttura: "Faggio massello e truciolato",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano 25 kg/m³ + poggiatesta + braccioli + cuscini 18 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 190 × H 90/110 cm",
-        "L 140 × P 210 × H 90/110 cm",
-        "L 160 × P 230 × H 90/110 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolato",
+        "Rete a doghe elettrosaldata e cinghie sotto la seduta",
+        "Materasso spesso 15 cm con schiuma di densità 30 kg/m³",
+        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+        "Schienale e poggiatesta in poliuretano espanso di densità 25 kg/m³",
+        "Braccioli in poliuretano espanso di densità 25 kg/m³ con cuscini in schiuma di densità 18 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 190, profondita: "92/205", altezza: "90/110" },
+        { nome: "divano/letto — materasso 140", lunghezza: 210, profondita: "92/205", altezza: "90/110" },
+        { nome: "divano/letto — materasso 160", lunghezza: 230, profondita: "92/205", altezza: "90/110" }
+      ]
     }
   },
 
   {
     id: 10,
     nome: "Dallas",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in legno massello e pannello truciolare. Seduta in poliuretano 30 kg/m³ con Dacron. Schienale in poliuretano 25 kg/m³ con Dacron. Materasso traspirante da 17 cm, densità 30 kg/m³. Disponibile in tessuto.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm con fodera traspirante. Disponibile in tessuto.",
     categoria: "3-posti",
     immagini: ["images/dallas.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Legno massello e pannello truciolare",
-      materasso: "Spessore 17 cm — densità 30 kg/m³ — traspirante",
-      seduta: "Poliuretano 30 kg/m³ + Dacron",
-      schienale: "Poliuretano 25 kg/m³ + Dacron",
-      rivestimento: "Tessuto",
-      misure: [
-        "L 120 × P 190 × H 85 cm",
-        "L 140 × P 210 × H 85 cm",
-        "L 160 × P 230 × H 85 cm"
+      materiali: [
+        "Struttura in legno massello e truciolare",
+        "Rete a doghe elettrosaldate e cinghie sotto la seduta",
+        "Materasso da 17 cm di spessore con schiuma di densità 30 kg/m³ e un lato traspirante",
+        "Seduta in poliuretano espanso di densità 30 kg/m³ rivestito in Dacron",
+        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³ rivestiti in Dacron",
+        "Rivestimento in tessuto"
       ],
-      misureLetto: "larghezza 92 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 190, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 210, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 230, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
   {
     id: 15,
     nome: "Jolie",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
     immagini: ["images/jolie.jpg", "images/jolie_2.jpg", "images/jolie_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 150 × H 85 cm",
-        "L 140 × P 170 × H 85 cm",
-        "L 160 × P 190 × H 85 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sotto la seduta",
+        "Materasso in schiuma di poliuretano espanso di spessore 15 cm con densità 30 kg/m³",
+        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 150, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 170, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 190, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
   {
     id: 16,
     nome: "Leonardo",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³. Materasso da 14 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Materasso da 14 cm. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
     immagini: ["images/leonardo.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 14 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 175 × H 85 cm",
-        "L 140 × P 195 × H 85 cm",
-        "L 160 × P 215 × H 85 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sotto la seduta",
+        "Materasso in schiuma di poliuretano espanso di spessore 14 cm con densità 30 kg/m³",
+        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 215, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
@@ -176,108 +192,114 @@ const DEFAULT_PRODUCTS = [
   {
     id: 6,
     nome: "Raffaelle",
-    sottotitolo: "Divano letto angolare — mat. 70 · 80 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto angolare — materasso 70 · 80 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "angolare",
     immagini: ["images/raffaelle.jpg", "images/raffaelle_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "mat. 70 × P 195 × H 85 cm",
-        "mat. 80 × P 215 × H 85 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sulla seduta",
+        "Materasso spesso 15 cm con schiuma di densità 30 kg/m³",
+        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 70", lunghezza: 195, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 80", lunghezza: 215, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
   {
     id: 9,
     nome: "Luigi",
-    sottotitolo: "Divano letto con chaiselong — 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³ con Dacron. Materasso traspirante da 17 cm, densità 30 kg/m³. Chaiselong 160 × 80 cm. Disponibile in tessuto o microfibra. Piedi in finitura cromo, wengé o chiaro.",
+    sottotitolo: "Divano letto con chaise longue — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm con fodera traspirante. Chaise longue 160 × 80 cm. Disponibile in tessuto o microfibra. Piedi cromati o in legno.",
     categoria: "angolare",
     immagini: ["images/luigi.jpg", "images/luigi_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 17 cm — densità 30 kg/m³ — traspirante",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano 25 kg/m³ + Dacron",
-      rivestimento: "Tessuto o microfibra — piedi cromo / wengé / chiaro",
-      misure: [
-        "L 120 × P 155 × H 85 cm + chaiselong 160 × 80 cm",
-        "L 140 × P 175 × H 85 cm + chaiselong 160 × 80 cm",
-        "L 160 × P 190 × H 85 cm + chaiselong 160 × 80 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Rete a doghe elettrosaldata e cinghie sotto la seduta",
+        "Materasso spesso 17 cm con schiuma di densità 30 kg/m³ e fodera traspirante",
+        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³ rivestiti in Dacron",
+        "Rivestimento in tessuto o microfibra",
+        "Piedi cromati o in legno tinto wengé o chiaro"
       ],
-      misureLetto: "larghezza 92 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 155, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 175, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 190, profondita: "92/205", altezza: 85 },
+        { nome: "chaise longue", lunghezza: 160, profondita: 80, altezza: 85 }
+      ]
     }
   },
 
   {
     id: 4,
     nome: "Capri",
-    sottotitolo: "Divano letto angolare — 205 cm",
-    descrizione: "Struttura in faggio massello e truciolato. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — 205 cm",
+    descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
     immagini: ["images/capri.jpg", "images/capri_2.jpg", "images/capri_3.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolato",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "—",
-      schienale: "—",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "205 × 90 × 78 cm (divano)"
+      materiali: [
+        "Struttura in legno massello di faggio e truciolato",
+        "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "205 × 175 × 45 cm"
+      composizione: [
+        { nome: "divano/letto — chiuso",  lunghezza: 205, profondita: 90,  altezza: 78 },
+        { nome: "divano/letto — aperto",  lunghezza: 205, profondita: 175, altezza: 45 }
+      ]
     }
   },
 
   {
     id: 13,
     nome: "Elba",
-    sottotitolo: "Divano letto angolare — 205 cm",
-    descrizione: "Struttura in faggio massello e truciolato. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — 205 cm",
+    descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
     immagini: ["images/elba.jpg", "images/elba_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolato",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "—",
-      schienale: "—",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "205 × 90 × 78 cm (divano)"
+      materiali: [
+        "Struttura in legno massello di faggio e truciolato",
+        "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "205 × 175 × 45 cm"
+      composizione: [
+        { nome: "divano/letto — chiuso",  lunghezza: 205, profondita: 90,  altezza: 78 },
+        { nome: "divano/letto — aperto",  lunghezza: 205, profondita: 175, altezza: 45 }
+      ]
     }
   },
 
   {
     id: 14,
     nome: "Ischia",
-    sottotitolo: "Divano letto angolare — 205 cm",
-    descrizione: "Struttura in faggio massello e truciolato. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — 205 cm",
+    descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
     immagini: ["images/ischia.jpg"],
     featured: true,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolato",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "—",
-      schienale: "—",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "205 × 90 × 78 cm (divano)"
+      materiali: [
+        "Struttura in legno massello di faggio e truciolato",
+        "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "205 × 175 × 45 cm"
+      composizione: [
+        { nome: "divano/letto — chiuso",  lunghezza: 205, profondita: 90,  altezza: 78 },
+        { nome: "divano/letto — aperto",  lunghezza: 205, profondita: 175, altezza: 45 }
+      ]
     }
   },
 
@@ -286,69 +308,76 @@ const DEFAULT_PRODUCTS = [
   {
     id: 5,
     nome: "Jeanne",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "letto",
     immagini: ["images/jeanne.jpg", "images/jeanne_aperto.jpg", "images/jeanne_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 160 × H 85 cm",
-        "L 140 × P 180 × H 85 cm",
-        "L 160 × P 195 × H 85 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sotto la seduta",
+        "Materasso in schiuma da 15 cm di spessore (densità 30 kg/m³)",
+        "Cuscino di seduta in poliuretano espanso da 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso da 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 160, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 180, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 195, profondita: "92/205", altezza: 85 }
+      ]
     }
   },
 
   {
     id: 7,
     nome: "Luca",
-    sottotitolo: "Divano letto con poggiatesta — 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³ con poggiatesta. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto con poggiatesta — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Poggiatesta regolabile incluso. Disponibile in tessuto o pelle.",
     categoria: "letto",
     immagini: ["images/luca.jpg", "images/luca_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³ + poggiatesta 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 175 × H 90/110 cm",
-        "L 140 × P 195 × H 90/110 cm",
-        "L 160 × P 215 × H 90/110 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sotto la seduta",
+        "Materasso in schiuma di 15 cm di spessore con densità 30 kg/m³",
+        "Cuscino di seduta in poliuretano espanso con densità 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso con densità 25 kg/m³",
+        "Poggiatesta in poliuretano espanso con densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: "90/110" },
+        { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: "90/110" },
+        { nome: "divano/letto — materasso 160", lunghezza: 215, profondita: "92/205", altezza: "90/110" }
+      ]
     }
   },
 
   {
     id: 12,
     nome: "Como",
-    sottotitolo: "Divano letto — larghezze 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e pannello truciolare. Seduta in poliuretano espanso 30 kg/m³. Schienale in poliuretano 25 kg/m³. Materasso da 15 cm, densità 30 kg/m³. Disponibile in tessuto o pelle.",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "letto",
     immagini: ["images/como.jpg", "images/como_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      struttura: "Faggio massello e pannello truciolare",
-      materasso: "Spessore 15 cm — densità 30 kg/m³",
-      seduta: "Poliuretano espanso 30 kg/m³",
-      schienale: "Poliuretano espanso 25 kg/m³",
-      rivestimento: "Tessuto o pelle",
-      misure: [
-        "L 120 × P 155 × H 85 cm",
-        "L 140 × P 175 × H 85 cm",
-        "L 160 × P 190 × H 85 cm"
+      materiali: [
+        "Struttura in faggio massello e truciolare",
+        "Meccanismo elettrosaldato e cinghie sotto la seduta",
+        "Materasso in schiuma di 15 cm di spessore con densità 30 kg/m³",
+        "Cuscino di seduta in poliuretano espanso con densità 30 kg/m³",
+        "Schienale e braccioli in poliuretano espanso con densità 25 kg/m³",
+        "Rivestimento in tessuto o pelle"
       ],
-      misureLetto: "92 × 205 cm"
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 155, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 175, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 190, profondita: "92/205", altezza: 85 }
+      ]
     }
   }
 
@@ -358,10 +387,9 @@ const DEFAULT_PRODUCTS = [
 
 const STORE_KEY    = 'viaFirenzeProducts';
 const VERSION_KEY  = 'viaFirenzeVersion';
-const CATALOG_VER  = '2026-05-06'; // Aggiorna questa stringa ogni volta che si modificano i prodotti
+const CATALOG_VER  = '2026-05-06b'; // Aggiorna questa stringa ogni volta che si modificano i prodotti
 
 function getProducts() {
-  // Se la versione salvata non corrisponde, cancella la cache e ricarica dal catalogo
   if (localStorage.getItem(VERSION_KEY) !== CATALOG_VER) {
     localStorage.setItem(STORE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
     localStorage.setItem(VERSION_KEY, CATALOG_VER);
@@ -397,8 +425,8 @@ function getProductById(id) {
   return getProducts().find(p => p.id === parseInt(id));
 }
 
-// ── Reset helper (cancella localStorage e ricarica i dati dal catalogo) ──
 function resetProducts() {
   localStorage.removeItem(STORE_KEY);
+  localStorage.removeItem(VERSION_KEY);
   return getProducts();
 }

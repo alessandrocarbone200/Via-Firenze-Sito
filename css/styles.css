@@ -1136,6 +1136,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 }
 
 @media (max-width: 768px) {
+  #scheda-content > div { grid-template-columns: 1fr !important; }
   .container { padding: 0 20px; }
   .nav-inner { padding: 0 20px; }
   .nav-menu  { display: none; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--color-border); padding: 24px; gap: 20px; }
