@@ -136,6 +136,15 @@
     </div>
   </div>
 
+  <!-- SCHEDA TECNICA -->
+  <section class="section" id="scheda-section" style="padding-top:0; padding-bottom:56px;">
+    <div class="container">
+      <div class="divider" style="margin-bottom:40px;"></div>
+      <h3 style="margin-bottom:28px; font-size:1.1rem; letter-spacing:.06em; text-transform:uppercase; color:var(--color-dark);">Scheda Tecnica</h3>
+      <div id="scheda-content"></div>
+    </div>
+  </section>
+
   <!-- RELATED PRODUCTS -->
   <section class="section section-alt" id="related-section">
     <div class="container">
@@ -237,6 +246,46 @@
       });
       thumbsEl.appendChild(div);
     });
+
+    // Scheda tecnica
+    const st = product.schedaTecnica;
+    if (st) {
+      const campiInfo = [
+        ['Struttura', st.struttura],
+        ['Materasso', st.materasso],
+        ['Seduta', st.seduta],
+        ['Schienale', st.schienale],
+        ['Rivestimento', st.rivestimento]
+      ].filter(([, v]) => v && v !== '—');
+
+      const misureRows = Array.isArray(st.misure) && st.misure.length > 0
+        ? st.misure.map(m => `<tr><td style="padding:8px 16px 8px 0; color:var(--color-mid);">${m}</td></tr>`).join('')
+        : '';
+
+      document.getElementById('scheda-content').innerHTML = `
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px;">
+          <div>
+            <table style="width:100%; border-collapse:collapse;">
+              ${campiInfo.map(([k,v]) => `
+                <tr style="border-bottom:1px solid var(--color-border);">
+                  <td style="padding:10px 16px 10px 0; font-weight:600; font-size:.9rem; white-space:nowrap; min-width:130px;">${k}</td>
+                  <td style="padding:10px 0; color:var(--color-mid); font-size:.9rem;">${v}</td>
+                </tr>
+              `).join('')}
+            </table>
+          </div>
+          <div>
+            <p style="font-weight:600; font-size:.9rem; margin-bottom:12px;">Misure disponibili</p>
+            <table style="width:100%; border-collapse:collapse;">
+              ${misureRows}
+            </table>
+            ${st.misureLetto ? `<p style="margin-top:16px; font-size:.85rem; color:var(--color-mid);"><strong style="color:var(--color-dark);">Zona notte:</strong> ${st.misureLetto}</p>` : ''}
+          </div>
+        </div>
+      `;
+    } else {
+      document.getElementById('scheda-section').style.display = 'none';
+    }
 
     // Related products
     const all     = getProducts();

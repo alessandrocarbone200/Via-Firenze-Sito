@@ -6,14 +6,14 @@
 
   <!-- Primary -->
   <title>Catalogo Divani | VIA FIRENZE</title>
-  <meta name="description" content="Esplora il catalogo completo VIA FIRENZE: divani 2 e 3 posti, divani letto, angolari e molto altro. Filtra per tipologia, tessuto e prezzo.">
+  <meta name="description" content="Esplora il catalogo completo VIA FIRENZE: divani 2 e 3 posti, divani letto e angolari. Tutti i modelli sono divani letto convertibili di produzione italiana.">
   <link rel="canonical" href="https://viafirenze.it/catalogo.html">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://viafirenze.it/catalogo.html">
   <meta property="og:title"       content="Catalogo Divani | VIA FIRENZE">
-  <meta property="og:description" content="Esplora il catalogo completo VIA FIRENZE: divani 2 e 3 posti, divani letto, angolari e molto altro. Filtra per tipologia, tessuto e prezzo.">
+  <meta property="og:description" content="Esplora il catalogo completo VIA FIRENZE: divani 2 e 3 posti, divani letto e angolari. Tutti i modelli sono divani letto convertibili di produzione italiana.">
   <meta property="og:image"       content="https://viafirenze.it/images/og-image.jpg">
   <meta property="og:locale"      content="it_IT">
   <meta property="og:site_name"   content="VIA FIRENZE">
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Catalogo Divani | VIA FIRENZE">
-  <meta name="twitter:description" content="Esplora il catalogo completo VIA FIRENZE: divani 2 e 3 posti, divani letto, angolari e molto altro. Filtra per tipologia, tessuto e prezzo.">
+  <meta name="twitter:description" content="Esplora il catalogo completo VIA FIRENZE: divani 2 e 3 posti, divani letto e angolari. Tutti i modelli sono divani letto convertibili di produzione italiana.">
   <meta name="twitter:image"       content="https://viafirenze.it/images/og-image.jpg">
 
   <!-- PWA / Favicon -->
@@ -153,50 +153,6 @@
           </label>
         </div>
 
-        <div class="filter-group">
-          <div class="filter-group-title">Tessuto</div>
-          <label class="filter-option">
-            <input type="checkbox" name="tessuto" value="Velluto">
-            <label>Velluto</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="tessuto" value="Lino">
-            <label>Lino</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="tessuto" value="Pelle Naturale">
-            <label>Pelle</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="tessuto" value="Microfibra">
-            <label>Microfibra</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="tessuto" value="Tessuto Tecnico">
-            <label>Tessuto Tecnico</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="tessuto" value="Bouclé">
-            <label>Bouclé</label>
-          </label>
-        </div>
-
-        <div class="filter-group">
-          <div class="filter-group-title">Prezzo</div>
-          <label class="filter-option">
-            <input type="checkbox" name="prezzo" value="0-999">
-            <label>Fino a €999</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="prezzo" value="1000-1499">
-            <label>€1.000 – €1.499</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="prezzo" value="1500-9999">
-            <label>Oltre €1.500</label>
-          </label>
-        </div>
-
         <button class="filter-reset" id="reset-filters">✕ Rimuovi filtri</button>
       </aside>
 
@@ -206,8 +162,6 @@
           <span class="catalog-count" id="catalog-count"></span>
           <select class="sort-select" id="sort-select" aria-label="Ordina per">
             <option value="default">Ordina per: In evidenza</option>
-            <option value="price-asc">Prezzo: Crescente</option>
-            <option value="price-desc">Prezzo: Decrescente</option>
             <option value="name">Nome A–Z</option>
           </select>
         </div>
@@ -283,23 +237,14 @@
   }
 
   function getActiveFilters() {
-    const cats    = [...document.querySelectorAll('input[name="cat"]:checked')].map(i => i.value);
-    const tessuti = [...document.querySelectorAll('input[name="tessuto"]:checked')].map(i => i.value);
-    const prezzi  = [...document.querySelectorAll('input[name="prezzo"]:checked')].map(i => i.value);
-    return { cats, tessuti, prezzi };
-  }
-
-  function inPriceRange(price, range) {
-    const [min, max] = range.split('-').map(Number);
-    return price >= min && price <= max;
+    const cats = [...document.querySelectorAll('input[name="cat"]:checked')].map(i => i.value);
+    return { cats };
   }
 
   function applyFilters(products) {
-    const { cats, tessuti, prezzi } = getActiveFilters();
+    const { cats } = getActiveFilters();
     return products.filter(p => {
-      if (cats.length    && !cats.includes(p.categoria))                         return false;
-      if (tessuti.length && !tessuti.some(t => p.tessuti.includes(t)))           return false;
-      if (prezzi.length  && !prezzi.some(r => inPriceRange(p.prezzoBase, r)))    return false;
+      if (cats.length && !cats.includes(p.categoria)) return false;
       return true;
     });
   }
@@ -307,9 +252,7 @@
   function sortProducts(products) {
     const val = document.getElementById('sort-select').value;
     const arr = [...products];
-    if (val === 'price-asc')  return arr.sort((a, b) => a.prezzoBase - b.prezzoBase);
-    if (val === 'price-desc') return arr.sort((a, b) => b.prezzoBase - a.prezzoBase);
-    if (val === 'name')       return arr.sort((a, b) => a.nome.localeCompare(b.nome));
+    if (val === 'name') return arr.sort((a, b) => a.nome.localeCompare(b.nome));
     return arr;
   }
 
