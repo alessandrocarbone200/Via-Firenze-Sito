@@ -1,7 +1,7 @@
 // ============================================================
 //  VIA FIRENZE — Dati prodotti
 //  FONTE UNICA: Catalogo ViaFirenze 2026 (CAT_26_web.pdf)
-//  Non modificare descrizioni o misure senza consultare il catalogo.
+//  Non modificare testi senza consultare il catalogo.
 // ============================================================
 
 const DEFAULT_PRODUCTS = [
@@ -17,15 +17,35 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/arthur.jpg", "images/arthur_aperto.jpg", "images/arthur_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in legno massello e truciolare",
-        "Rete a doghe elettrosaldate e cinghie sotto la seduta",
-        "Materasso da 15 cm di spessore con schiuma di densità 30 kg/m³",
-        "Seduta in schiuma di poliuretano espanso di densità 30 kg/m³",
-        "Schienale in fiocco di poliuretano",
-        "Rivestimento in tessuto",
-        "Piedi in legno tinta wengé"
-      ],
+      materiali: {
+        it: [
+          "Struttura in legno massello e truciolare",
+          "Rete a doghe elettrosaldate e cinghie sotto la seduta",
+          "Materasso da 15 cm di spessore con schiuma di densità 30 kg/m³",
+          "Seduta in schiuma di poliuretano espanso di densità 30 kg/m³",
+          "Schienale in fiocco di poliuretano",
+          "Rivestimento in tessuto",
+          "Piedi in legno tinta wengé"
+        ],
+        en: [
+          "Solid wood and particleboard frame",
+          "Electrowelded slatted base and webbing under the seat",
+          "15 cm thick mattress with 30 kg/m³ density foam",
+          "30 kg/m³ density polyurethane foam seat",
+          "Polyurethane flock backrest",
+          "Fabric upholstery",
+          "Wooden feet painted wengé"
+        ],
+        fr: [
+          "Structure en bois massif et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier en flocon de polyuréthane",
+          "Revêtements en tissu",
+          "Pieds bois wengé"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 165, profondita: "92/205", altezza: 109 },
         { nome: "divano/letto — materasso 140", lunghezza: 185, profondita: "92/205", altezza: 109 },
@@ -38,19 +58,37 @@ const DEFAULT_PRODUCTS = [
     id: 3,
     nome: "Giulia",
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
-    descrizione: "Struttura in legno massello di faggio e truciolare. Meccanismo Rapidlit. Materasso da 20 cm — il più spesso della collezione. Disponibile in tessuto o pelle.",
+    descrizione: "Struttura in legno massello di faggio e truciolare. Meccanismo Rapidlit. Materasso da 20 cm. Disponibile in tessuto o pelle.",
     categoria: "2-posti",
     immagini: ["images/giulia.jpg", "images/giulia_detail.jpg"],
     featured: true,
     schedaTecnica: {
-      materiali: [
-        "Struttura in legno massello di faggio e truciolare",
-        "Rete a doghe elettrosaldata e cinghie sotto la seduta",
-        "Materasso spesso 20 cm con schiuma di densità 28 kg/m³",
-        "Cuscino di seduta in schiuma di poliuretano di densità 30 kg/m³",
-        "Schienale e braccioli in schiuma di poliuretano di densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in legno massello di faggio e truciolare",
+          "Rete a doghe elettrosaldata e cinghie sotto la seduta",
+          "Materasso spesso 20 cm con schiuma di densità 28 kg/m³",
+          "Cuscino di seduta in schiuma di poliuretano di densità 30 kg/m³",
+          "Schienale e braccioli in schiuma di poliuretano di densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "Electrically welded slatted base and webbing under the seat",
+          "20 cm thick mattress with 28 kg/m³ density foam",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 20 cm mousse 28 kg/m³",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: 85 },
@@ -68,14 +106,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/myto.jpg", "images/myto_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sulla seduta",
-        "Materasso spesso 13 cm con schiuma di densità 21 kg/m³",
-        "Cuscino di seduta in poliuretano espanso di densità 25 kg/m³",
-        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sulla seduta",
+          "Materasso spesso 13 cm con schiuma di densità 21 kg/m³",
+          "Cuscino di seduta in poliuretano espanso di densità 25 kg/m³",
+          "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Frame in solid beech and particleboard",
+          "Electro-welded mechanism and webbing on the seat",
+          "13 cm thick mattress with 21 kg/m³ density foam",
+          "25 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Upholstery in fabric or leather"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sur l'assise",
+          "Matelas 13 cm en 21 kg/m³ de densité",
+          "Assise en mousse polyuréthane 25 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtement en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 164, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 184, profondita: "92/205", altezza: 85 },
@@ -90,20 +146,40 @@ const DEFAULT_PRODUCTS = [
     id: 1,
     nome: "Colosseo",
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e truciolato. Meccanismo Rapidlit. Dotato di poggiatesta regolabile. Disponibile in tessuto o pelle.",
+    descrizione: "Struttura in faggio massello e truciolato. Meccanismo Rapidlit. Poggiatesta regolabile. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
     immagini: ["images/colosseo.jpg", "images/colosseo_aperto.jpg", "images/colosseo_detail.jpg"],
     featured: true,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolato",
-        "Rete a doghe elettrosaldata e cinghie sotto la seduta",
-        "Materasso spesso 15 cm con schiuma di densità 30 kg/m³",
-        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
-        "Schienale e poggiatesta in poliuretano espanso di densità 25 kg/m³",
-        "Braccioli in poliuretano espanso di densità 25 kg/m³ con cuscini in schiuma di densità 18 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolato",
+          "Rete a doghe elettrosaldata e cinghie sotto la seduta",
+          "Materasso spesso 15 cm con schiuma di densità 30 kg/m³",
+          "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+          "Schienale e poggiatesta in poliuretano espanso di densità 25 kg/m³",
+          "Braccioli in poliuretano espanso di densità 25 kg/m³ con cuscini in schiuma di densità 18 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beech and particleboard frame",
+          "Electrowelded slatted base and webbing under the seat",
+          "15 cm thick mattress with 30 kg/m³ density foam",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and headrest",
+          "25 kg/m³ density polyurethane foam armrests with 18 kg/m³ density foam cushions",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et têtière en mousse polyuréthane 25 kg/m³ de densité",
+          "Accoudoir en mousse polyuréthane 25 kg/m³ de densité, avec coussins en mousse 18 kg/m³",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 190, profondita: "92/205", altezza: "90/110" },
         { nome: "divano/letto — materasso 140", lunghezza: 210, profondita: "92/205", altezza: "90/110" },
@@ -121,14 +197,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/dallas.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in legno massello e truciolare",
-        "Rete a doghe elettrosaldate e cinghie sotto la seduta",
-        "Materasso da 17 cm di spessore con schiuma di densità 30 kg/m³ e un lato traspirante",
-        "Seduta in poliuretano espanso di densità 30 kg/m³ rivestito in Dacron",
-        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³ rivestiti in Dacron",
-        "Rivestimento in tessuto"
-      ],
+      materiali: {
+        it: [
+          "Struttura in legno massello e truciolare",
+          "Rete a doghe elettrosaldate e cinghie sotto la seduta",
+          "Materasso da 17 cm di spessore con schiuma di densità 30 kg/m³ e un lato traspirante",
+          "Seduta in poliuretano espanso di densità 30 kg/m³ rivestito in Dacron",
+          "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³ rivestiti in Dacron",
+          "Rivestimento in tessuto"
+        ],
+        en: [
+          "Solid wood and particleboard frame",
+          "Electrowelded slatted base and webbing under the seat",
+          "17 cm thick mattress with 30 kg/m³ density foam and one breathable side",
+          "30 kg/m³ density polyurethane foam seat covered with Dacron",
+          "25 kg/m³ density polyurethane foam backrest and armrests covered with Dacron",
+          "Fabric upholstery"
+        ],
+        fr: [
+          "Structure en bois massif et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 17 cm mousse en 30 kg/m³ une face antitranspiration",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité recouvert de Dacron",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité recouvert de Dacron",
+          "Revêtements en tissu"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 190, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 210, profondita: "92/205", altezza: 85 },
@@ -146,14 +240,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/jolie.jpg", "images/jolie_2.jpg", "images/jolie_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sotto la seduta",
-        "Materasso in schiuma di poliuretano espanso di spessore 15 cm con densità 30 kg/m³",
-        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sotto la seduta",
+          "Materasso in schiuma di poliuretano espanso di spessore 15 cm con densità 30 kg/m³",
+          "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beech and particleboard frame",
+          "Electrowelded mechanism and webbing under the seat",
+          "15 cm thick, 30 kg/m³ density foam mattress",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse 30 kg/m³ de densité",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 150, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 170, profondita: "92/205", altezza: 85 },
@@ -171,14 +283,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/leonardo.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sotto la seduta",
-        "Materasso in schiuma di poliuretano espanso di spessore 14 cm con densità 30 kg/m³",
-        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sotto la seduta",
+          "Materasso in schiuma di poliuretano espanso di spessore 14 cm con densità 30 kg/m³",
+          "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beech and particleboard frame",
+          "Electrowelded mechanism and webbing under the seat",
+          "14 cm thick, 30 kg/m³ density foam mattress",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sous l'assise",
+          "Matelas en 14 cm mousse 30 kg/m³ de densité",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: 85 },
@@ -198,14 +328,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/raffaelle.jpg", "images/raffaelle_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sulla seduta",
-        "Materasso spesso 15 cm con schiuma di densità 30 kg/m³",
-        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sulla seduta",
+          "Materasso spesso 15 cm con schiuma di densità 30 kg/m³",
+          "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Frame in solid beech and particleboard",
+          "Electro-welded mechanism and webbing on the seat",
+          "15 cm thick mattress with 30 kg/m³ density foam",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Upholstery in fabric or leather"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sur l'assise",
+          "Matelas 15 cm en 30 kg/m³ de densité",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtement en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 70", lunghezza: 195, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 80", lunghezza: 215, profondita: "92/205", altezza: 85 }
@@ -217,25 +365,45 @@ const DEFAULT_PRODUCTS = [
     id: 9,
     nome: "Luigi",
     sottotitolo: "Divano letto con chaise longue — materasso 120 · 140 · 160 cm",
-    descrizione: "Struttura in faggio massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm con fodera traspirante. Chaise longue 160 × 80 cm. Disponibile in tessuto o microfibra. Piedi cromati o in legno.",
+    descrizione: "Struttura in faggio massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm. Chaise longue 160×80 cm. Disponibile in tessuto o microfibra.",
     categoria: "angolare",
     immagini: ["images/luigi.jpg", "images/luigi_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Rete a doghe elettrosaldata e cinghie sotto la seduta",
-        "Materasso spesso 17 cm con schiuma di densità 30 kg/m³ e fodera traspirante",
-        "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³ rivestiti in Dacron",
-        "Rivestimento in tessuto o microfibra",
-        "Piedi cromati o in legno tinto wengé o chiaro"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Rete a doghe elettrosaldata e cinghie sotto la seduta",
+          "Materasso spesso 17 cm con schiuma di densità 30 kg/m³ e fodera traspirante",
+          "Cuscino di seduta in poliuretano espanso di densità 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso di densità 25 kg/m³ rivestiti in Dacron",
+          "Rivestimento in tessuto o microfibra",
+          "Piedi cromati o in legno tinto wengé o chiaro"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "Electrically welded slatted base and webbing under the seat",
+          "17 cm thick mattress with 30 kg/m³ density foam and breathable cover",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests covered with Dacron",
+          "Fabric or microfiber upholstery",
+          "Chrome, wengé, or light wood legs"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 17 cm mousse en 30 kg/m³ avec toile antitranspiration",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité recouvert de Dacron",
+          "Revêtements en tissu ou microfibre",
+          "Pieds chromés ou bois wengé ou clair"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 155, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 175, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 160", lunghezza: 190, profondita: "92/205", altezza: 85 },
-        { nome: "chaise longue", lunghezza: 160, profondita: 80, altezza: 85 }
+        { nome: "chaise longue",                lunghezza: 160, profondita: 80,        altezza: 85 }
       ]
     }
   },
@@ -249,11 +417,23 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/capri.jpg", "images/capri_2.jpg", "images/capri_3.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in legno massello di faggio e truciolato",
-        "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in legno massello di faggio e truciolato",
+          "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "15 cm foam mattress with a density of 30 kg/m³",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Matelas en 15 cm mousse en 30 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — chiuso",  lunghezza: 205, profondita: 90,  altezza: 78 },
         { nome: "divano/letto — aperto",  lunghezza: 205, profondita: 175, altezza: 45 }
@@ -270,11 +450,23 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/elba.jpg", "images/elba_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in legno massello di faggio e truciolato",
-        "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in legno massello di faggio e truciolato",
+          "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "15 cm foam mattress with a density of 30 kg/m³",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Matelas en 15 cm mousse en 30 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — chiuso",  lunghezza: 205, profondita: 90,  altezza: 78 },
         { nome: "divano/letto — aperto",  lunghezza: 205, profondita: 175, altezza: 45 }
@@ -291,11 +483,23 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/ischia.jpg"],
     featured: true,
     schedaTecnica: {
-      materiali: [
-        "Struttura in legno massello di faggio e truciolato",
-        "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in legno massello di faggio e truciolato",
+          "Materasso in schiuma da 15 cm con densità di 30 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "15 cm foam mattress with a density of 30 kg/m³",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Matelas en 15 cm mousse en 30 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — chiuso",  lunghezza: 205, profondita: 90,  altezza: 78 },
         { nome: "divano/letto — aperto",  lunghezza: 205, profondita: 175, altezza: 45 }
@@ -314,14 +518,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/jeanne.jpg", "images/jeanne_aperto.jpg", "images/jeanne_detail.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sotto la seduta",
-        "Materasso in schiuma da 15 cm di spessore (densità 30 kg/m³)",
-        "Cuscino di seduta in poliuretano espanso da 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso da 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sotto la seduta",
+          "Materasso in schiuma da 15 cm di spessore (densità 30 kg/m³)",
+          "Cuscino di seduta in poliuretano espanso da 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso da 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "Electrowelded mechanism and webbing under the seat",
+          "15 cm thick foam mattress (30 kg/m³ density)",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 160, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 180, profondita: "92/205", altezza: 85 },
@@ -339,15 +561,35 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/luca.jpg", "images/luca_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sotto la seduta",
-        "Materasso in schiuma di 15 cm di spessore con densità 30 kg/m³",
-        "Cuscino di seduta in poliuretano espanso con densità 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso con densità 25 kg/m³",
-        "Poggiatesta in poliuretano espanso con densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sotto la seduta",
+          "Materasso in schiuma di 15 cm di spessore con densità 30 kg/m³",
+          "Cuscino di seduta in poliuretano espanso con densità 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso con densità 25 kg/m³",
+          "Poggiatesta in poliuretano espanso con densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beechwood and particleboard frame",
+          "Electrowelded mechanism and webbing under the seat",
+          "15 cm thick foam mattress with a density of 30 kg/m³",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "25 kg/m³ density polyurethane foam headrest",
+          "Upholstery in fabric or leather"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³ de densité",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Têtière en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: "90/110" },
         { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: "90/110" },
@@ -365,14 +607,32 @@ const DEFAULT_PRODUCTS = [
     immagini: ["images/como.jpg", "images/como_aperto.jpg"],
     featured: false,
     schedaTecnica: {
-      materiali: [
-        "Struttura in faggio massello e truciolare",
-        "Meccanismo elettrosaldato e cinghie sotto la seduta",
-        "Materasso in schiuma di 15 cm di spessore con densità 30 kg/m³",
-        "Cuscino di seduta in poliuretano espanso con densità 30 kg/m³",
-        "Schienale e braccioli in poliuretano espanso con densità 25 kg/m³",
-        "Rivestimento in tessuto o pelle"
-      ],
+      materiali: {
+        it: [
+          "Struttura in faggio massello e truciolare",
+          "Meccanismo elettrosaldato e cinghie sotto la seduta",
+          "Materasso in schiuma di 15 cm di spessore con densità 30 kg/m³",
+          "Cuscino di seduta in poliuretano espanso con densità 30 kg/m³",
+          "Schienale e braccioli in poliuretano espanso con densità 25 kg/m³",
+          "Rivestimento in tessuto o pelle"
+        ],
+        en: [
+          "Solid beech and particleboard frame",
+          "Electrowelded mechanism and webbing under the seat",
+          "15 cm thick foam mattress with a density of 30 kg/m³",
+          "30 kg/m³ density polyurethane foam seat cushion",
+          "25 kg/m³ density polyurethane foam backrest and armrests",
+          "Fabric or leather upholstery"
+        ],
+        fr: [
+          "Structure en bois massif (hêtre) et bois aggloméré",
+          "Mécanique électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³ de densité",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier et accoudoir en mousse polyuréthane 25 kg/m³ de densité",
+          "Revêtements en tissu ou cuir"
+        ]
+      },
       composizione: [
         { nome: "divano/letto — materasso 120", lunghezza: 155, profondita: "92/205", altezza: 85 },
         { nome: "divano/letto — materasso 140", lunghezza: 175, profondita: "92/205", altezza: 85 },
@@ -385,9 +645,9 @@ const DEFAULT_PRODUCTS = [
 
 // ── Storage helpers ───────────────────────────────────────
 
-const STORE_KEY    = 'viaFirenzeProducts';
-const VERSION_KEY  = 'viaFirenzeVersion';
-const CATALOG_VER  = '2026-05-06b'; // Aggiorna questa stringa ogni volta che si modificano i prodotti
+const STORE_KEY   = 'viaFirenzeProducts';
+const VERSION_KEY = 'viaFirenzeVersion';
+const CATALOG_VER = '2026-05-06c';
 
 function getProducts() {
   if (localStorage.getItem(VERSION_KEY) !== CATALOG_VER) {
