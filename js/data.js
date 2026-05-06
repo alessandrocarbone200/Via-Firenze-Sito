@@ -639,6 +639,100 @@ const DEFAULT_PRODUCTS = [
         { nome: "divano/letto — materasso 160", lunghezza: 190, profondita: "92/205", altezza: 85 }
       ]
     }
+  },
+
+  // ── JACK ────────────────────────────────────────────────
+  {
+    id: 13,
+    nome: "Jack",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
+    categoria: "2-posti",
+    immagini: ["images/blanche.jpg", "images/blanche_2.jpg", "images/blanche_detail.jpg"],
+    featured: false,
+    schedaTecnica: {
+      materiali: {
+        it: [
+          "Struttura in legno massello e truciolare",
+          "Rete a doghe elettrosaldate e cinghie sotto la seduta",
+          "Materasso da 15 cm di spessore con schiuma di densità 30 kg/m³",
+          "Seduta in schiuma di poliuretano espanso di densità 30 kg/m³",
+          "Schienale in fiocco di poliuretano",
+          "Rivestimento in tessuto",
+          "Piedi in legno tinta wengé"
+        ],
+        en: [
+          "Solid wood and particleboard frame",
+          "Electrowelded slatted base and webbing under the seat",
+          "15 cm thick mattress with 30 kg/m³ density foam",
+          "30 kg/m³ density polyurethane foam seat",
+          "Polyurethane flock backrest",
+          "Fabric upholstery",
+          "Wooden feet painted wengé"
+        ],
+        fr: [
+          "Structure en bois massif et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier en flocon de polyuréthane",
+          "Revêtements en tissu",
+          "Pieds bois wengé"
+        ]
+      },
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 175, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 195, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 215, profondita: "92/205", altezza: 85 }
+      ]
+    }
+  },
+
+  // ── VITO ────────────────────────────────────────────────
+  {
+    id: 14,
+    nome: "Vito",
+    sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
+    descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
+    categoria: "3-posti",
+    immagini: ["images/colosseo.jpg"],
+    featured: false,
+    schedaTecnica: {
+      materiali: {
+        it: [
+          "Struttura in legno massello e truciolare",
+          "Rete a doghe elettrosaldate e cinghie sotto la seduta",
+          "Materasso da 15 cm di spessore con schiuma di densità 30 kg/m³",
+          "Seduta in schiuma di poliuretano espanso di densità 30 kg/m³",
+          "Schienale in fiocco di poliuretano",
+          "Rivestimento in tessuto",
+          "Piedi in legno tinta wengé"
+        ],
+        en: [
+          "Solid wood and particleboard frame",
+          "Electrowelded slatted base and webbing under the seat",
+          "15 cm thick mattress with 30 kg/m³ density foam",
+          "30 kg/m³ density polyurethane foam seat",
+          "Polyurethane flock backrest",
+          "Fabric upholstery",
+          "Wooden feet painted wengé"
+        ],
+        fr: [
+          "Structure en bois massif et bois aggloméré",
+          "Sommier électrosoudé et sangles sous l'assise",
+          "Matelas en 15 cm mousse en 30 kg/m³",
+          "Assise en mousse polyuréthane 30 kg/m³ de densité",
+          "Dossier en flocon de polyuréthane",
+          "Revêtements en tissu",
+          "Pieds bois wengé"
+        ]
+      },
+      composizione: [
+        { nome: "divano/letto — materasso 120", lunghezza: 190, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 140", lunghezza: 210, profondita: "92/205", altezza: 85 },
+        { nome: "divano/letto — materasso 160", lunghezza: 230, profondita: "92/205", altezza: 85 }
+      ]
+    }
   }
 
 ];
@@ -647,7 +741,7 @@ const DEFAULT_PRODUCTS = [
 
 const STORE_KEY   = 'viaFirenzeProducts';
 const VERSION_KEY = 'viaFirenzeVersion';
-const CATALOG_VER = '2026-05-06d';
+const CATALOG_VER = '2026-05-06e';
 
 function getProducts() {
   if (localStorage.getItem(VERSION_KEY) !== CATALOG_VER) {
