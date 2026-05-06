@@ -695,7 +695,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
     categoria: "3-posti",
-    immagini: ["images/colosseo.jpg"],
+    immagini: ["images/vito.jpg"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -741,7 +741,7 @@ const DEFAULT_PRODUCTS = [
 
 const STORE_KEY   = 'viaFirenzeProducts';
 const VERSION_KEY = 'viaFirenzeVersion';
-const CATALOG_VER = '2026-05-06e';
+const CATALOG_VER = '2026-05-06f';
 
 function getProducts() {
   if (localStorage.getItem(VERSION_KEY) !== CATALOG_VER) {
