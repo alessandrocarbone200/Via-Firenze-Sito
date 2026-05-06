@@ -272,11 +272,37 @@
 
     // Scheda tecnica — multilingue
     const st = product.schedaTecnica;
+
     const tableLabels = {
       it: { composizione: 'Composizione',  lunghezza: 'Lunghezza cm', profondita: 'Profondità cm', altezza: 'Altezza cm' },
       en: { composizione: 'Composition',   lunghezza: 'Length cm',    profondita: 'Depth cm',      altezza: 'Height cm'  },
       fr: { composizione: 'Composition',   lunghezza: 'Longueur cm',  profondita: 'Profondeur cm', altezza: 'Hauteur cm' }
     };
+
+    // Traduzione dei nomi riga della tabella composizione
+    const nomeMap = {
+      en: {
+        'divano/letto': 'sofa/bed',
+        'materasso':    'mattress',
+        'chiuso':       'closed',
+        'aperto':       'open',
+        'chaise longue':'chaise longue'
+      },
+      fr: {
+        'divano/letto': 'canapé/lit',
+        'materasso':    'couchage',
+        'chiuso':       'fermé',
+        'aperto':       'ouvert',
+        'chaise longue':'méridienne'
+      }
+    };
+
+    function traduciNome(nome, lang) {
+      if (lang === 'it') return nome;
+      const map = nomeMap[lang];
+      return nome.replace(/divano\/letto|materasso|chiuso|aperto|chaise longue/gi,
+        w => map[w.toLowerCase()] || w);
+    }
 
     function renderScheda(lang) {
       if (!st || !st.materiali || !st.composizione) {
@@ -294,10 +320,10 @@
 
       const composizioneRows = st.composizione.map((r, i) => `
         <tr style="background:${i % 2 === 0 ? 'var(--color-off-white)' : '#fff'};">
-          <td style="padding:10px 16px; font-size:.88rem; color:var(--color-mid);">${r.nome}</td>
-          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600;">${r.lunghezza}</td>
-          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600;">${r.profondita}</td>
-          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600;">${r.altezza}</td>
+          <td style="padding:10px 16px; font-size:.88rem; color:var(--color-mid); width:52%;">${traduciNome(r.nome, lang)}</td>
+          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600; width:16%;">${r.lunghezza}</td>
+          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600; width:16%;">${r.profondita}</td>
+          <td style="padding:10px 16px; font-size:.88rem; text-align:center; font-weight:600; width:16%;">${r.altezza}</td>
         </tr>
       `).join('');
 
@@ -309,13 +335,19 @@
             </ul>
           </div>
           <div style="overflow-x:auto;">
-            <table style="width:100%; border-collapse:collapse; border:1px solid var(--color-border);">
+            <table style="width:100%; min-width:360px; table-layout:fixed; border-collapse:collapse; border:1px solid var(--color-border);">
+              <colgroup>
+                <col style="width:52%">
+                <col style="width:16%">
+                <col style="width:16%">
+                <col style="width:16%">
+              </colgroup>
               <thead>
                 <tr style="background:var(--color-dark); color:#fff;">
-                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:left; text-transform:uppercase;">${lbl.composizione}</th>
-                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:center; text-transform:uppercase;">${lbl.lunghezza}</th>
-                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:center; text-transform:uppercase;">${lbl.profondita}</th>
-                  <th style="padding:10px 16px; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-align:center; text-transform:uppercase;">${lbl.altezza}</th>
+                  <th style="padding:10px 16px; font-size:.75rem; font-weight:600; letter-spacing:.07em; text-align:left; text-transform:uppercase;">${lbl.composizione}</th>
+                  <th style="padding:10px 8px; font-size:.75rem; font-weight:600; letter-spacing:.07em; text-align:center; text-transform:uppercase;">${lbl.lunghezza}</th>
+                  <th style="padding:10px 8px; font-size:.75rem; font-weight:600; letter-spacing:.07em; text-align:center; text-transform:uppercase;">${lbl.profondita}</th>
+                  <th style="padding:10px 8px; font-size:.75rem; font-weight:600; letter-spacing:.07em; text-align:center; text-transform:uppercase;">${lbl.altezza}</th>
                 </tr>
               </thead>
               <tbody>${composizioneRows}</tbody>
