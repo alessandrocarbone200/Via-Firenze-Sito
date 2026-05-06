@@ -118,6 +118,78 @@ const DEFAULT_PRODUCTS = [
     colori: ["Grigio Antracite", "Tortora", "Nero", "Beige Cammello"],
     immagini: ["images/dallas.jpg", "images/dallas.jpg", "images/dallas.jpg"],
     featured: false
+  },
+  {
+    id: 11,
+    nome: "Blanche",
+    sottotitolo: "Divano 2 posti elegante",
+    descrizione: "Blanche è la sintesi perfetta tra raffinatezza francese e maestria artigianale italiana. Le sue linee pulite e i dettagli ricercati lo rendono un pezzo d'arredo capace di valorizzare qualsiasi ambiente. La struttura leggera e i piedi in legno naturale completano un'estetica senza tempo.",
+    prezzoBase: 1090,
+    categoria: "2-posti",
+    tessuti: ["Bouclé", "Velluto", "Lino"],
+    colori: ["Bianco Avorio", "Grigio Perla", "Rosa Antico", "Écru"],
+    immagini: ["images/blanche.jpg", "images/blanche_detail.jpg", "images/blanche_2.jpg"],
+    featured: true
+  },
+  {
+    id: 12,
+    nome: "Como",
+    sottotitolo: "Divano letto con apertura facilitata",
+    descrizione: "Como prende il nome dalla perla della Lombardia e ne cattura l'eleganza discreta. Il meccanismo di apertura brevettato permette di trasformare il divano in un comodo letto matrimoniale con un gesto solo, senza spostare i cuscini. Perfetto per chi cerca funzionalità e stile in egual misura.",
+    prezzoBase: 1390,
+    categoria: "letto",
+    tessuti: ["Tessuto Tecnico", "Microfibra", "Lino"],
+    colori: ["Grigio Pietra", "Tortora", "Antracite", "Sabbia"],
+    immagini: ["images/como.jpg", "images/como_aperto.jpg", "images/como.jpg"],
+    featured: false
+  },
+  {
+    id: 13,
+    nome: "Elba",
+    sottotitolo: "Divano 3 posti convertibile",
+    descrizione: "Elba evoca la bellezza selvaggia dell'isola toscana: un divano dalle forme morbide e avvolgenti che invita al relax più profondo. La struttura in legno massiccio e l'imbottitura in piuma sintetica garantiscono un comfort eccezionale, mentre il meccanismo scorrevole lo trasforma in un letto in pochi secondi.",
+    prezzoBase: 1490,
+    categoria: "3-posti",
+    tessuti: ["Lino", "Cotone", "Tessuto Tecnico"],
+    colori: ["Bianco Puro", "Sabbia", "Verde Oliva", "Terracotta"],
+    immagini: ["images/elba.jpg", "images/elba_detail.jpg", "images/elba.jpg"],
+    featured: false
+  },
+  {
+    id: 14,
+    nome: "Ischia",
+    sottotitolo: "Divano angolare modulare",
+    descrizione: "Ischia celebra il glamour della più grande isola del Golfo di Napoli. Il suo design modulare e generoso è pensato per chi vuole creare un angolo relax esclusivo nel proprio salotto. La configurazione ad angolo è orientabile, così da adattarsi perfettamente a qualsiasi pianta.",
+    prezzoBase: 1990,
+    categoria: "angolare",
+    tessuti: ["Tessuto Tecnico", "Velluto", "Pelle Ecologica"],
+    colori: ["Blu Oceano", "Grigio Antracite", "Tortora", "Verde Bottiglia"],
+    immagini: ["images/ischia.jpg", "images/ischia.jpg", "images/ischia.jpg"],
+    featured: true
+  },
+  {
+    id: 15,
+    nome: "Jolie",
+    sottotitolo: "Divano 2 posti con chaise longue",
+    descrizione: "Jolie — grazioso in francese — è un divano che conquista al primo sguardo. La chaise longue integrata offre uno spazio relax irresistibile, mentre il design contemporaneo si inserisce con eleganza in qualsiasi ambiente. Disponibile in una ricca selezione di tessuti e colori per personalizzare ogni dettaglio.",
+    prezzoBase: 1290,
+    categoria: "angolare",
+    tessuti: ["Velluto", "Bouclé", "Tessuto Tecnico"],
+    colori: ["Rosa Antico", "Verde Salvia", "Grigio Perla", "Écru"],
+    immagini: ["images/jolie.jpg", "images/jolie_2.jpg", "images/jolie_detail.jpg"],
+    featured: true
+  },
+  {
+    id: 16,
+    nome: "Leonardo",
+    sottotitolo: "Divano 3 posti di design",
+    descrizione: "Leonardo porta la firma del genio italiano nel tuo salotto. Un divano che unisce proporzioni studiate, materiali pregiati e un comfort senza compromessi. La struttura in legno di faggio laccato e l'imbottitura multistrato lo rendono un pezzo destinato a durare nel tempo, migliorando ad ogni anno che passa.",
+    prezzoBase: 1690,
+    categoria: "3-posti",
+    tessuti: ["Pelle Ecologica", "Velluto", "Tessuto Tecnico"],
+    colori: ["Cognac", "Nero Ebano", "Grigio Antracite", "Bianco Avorio"],
+    immagini: ["images/leonardo.jpg", "images/leonardo.jpg", "images/leonardo.jpg"],
+    featured: false
   }
 ];
 
