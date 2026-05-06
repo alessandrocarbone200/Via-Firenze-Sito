@@ -586,13 +586,13 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 /* ─── Page Header ────────────────────────────────────────────── */
 .page-header {
   padding: 140px 0 80px;
-  background: var(--color-off-white);
+  background: #5C3044;
   text-align: center;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: none;
 }
 
-.page-header h1 { margin-bottom: 12px; }
-.page-header p { color: var(--color-mid); max-width: 480px; margin: 0 auto; }
+.page-header h1 { margin-bottom: 12px; color: #fff; }
+.page-header p { color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto; }
 
 .breadcrumb {
   display: flex;
@@ -601,11 +601,12 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   gap: 8px;
   margin-bottom: 24px;
   font-size: 0.78rem;
-  color: var(--color-light);
+  color: rgba(255,255,255,0.65);
 }
 
-.breadcrumb a:hover { color: var(--color-dark); }
-.breadcrumb span { color: var(--color-border); }
+.breadcrumb a { color: rgba(255,255,255,0.65); }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { color: rgba(255,255,255,0.35); }
 
 /* ─── Catalog ────────────────────────────────────────────────── */
 .catalog-layout {
