@@ -86,7 +86,7 @@
     <h1>L'arte italiana<br>del comfort</h1>
     <p class="hero-sub">I nostri divani letto nascono da un'attenta progettazione che mette al centro le esigenze di comfort, praticità ed estetica. Ogni modello si integra con naturale eleganza negli ambienti della casa, unendo la funzionalità di un letto alla raffinatezza di un divano dal design curato.</p>
     <div class="hero-actions" style="justify-content:center;">
-      <a href="catalogo.html" class="btn btn-light">Scopri la Collezione</a>
+      <a href="#catalogo" class="btn btn-light">Scopri la Collezione</a>
     </div>
   </div>
 </section>
@@ -124,64 +124,14 @@
   </div>
 </div>
 
-<!-- COLLECTIONS -->
-<section class="section" aria-labelledby="collections-title">
+<!-- CATALOG -->
+<section class="section" id="catalogo" aria-labelledby="catalog-title">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Le nostre collezioni</span>
-      <h2 id="collections-title">Trova il tuo stile</h2>
-      <p>Dalla compattezza del due posti all'ampiezza degli angolari, ogni collezione è pensata per rispondere a esigenze diverse con la stessa cura artigianale.</p>
+      <span class="section-label">La nostra collezione</span>
+      <h2 id="catalog-title">I nostri divani</h2>
     </div>
-  </div>
-  <div class="collections-grid">
-    <a href="catalogo.html?cat=2-posti" class="collection-card">
-      <img src="images/giulia.jpg" alt="Divano a due posti VIA FIRENZE — modello Giulia" loading="lazy" width="600" height="800">
-      <div class="collection-overlay">
-        <h3>Due Posti</h3>
-        <p>Compatti ed eleganti</p>
-      </div>
-      <div class="collection-arrow" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </a>
-    <a href="catalogo.html?cat=3-posti" class="collection-card">
-      <img src="images/colosseo.jpg" alt="Divano a tre posti VIA FIRENZE — modello Colosseo" loading="lazy" width="600" height="800">
-      <div class="collection-overlay">
-        <h3>Tre Posti</h3>
-        <p>Il classico senza tempo</p>
-      </div>
-      <div class="collection-arrow" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </a>
-    <a href="catalogo.html?cat=angolare" class="collection-card">
-      <img src="images/raffaelle.jpg" alt="Divano angolare VIA FIRENZE — modello Raffaelle" loading="lazy" width="600" height="800">
-      <div class="collection-overlay">
-        <h3>Angolari</h3>
-        <p>Spazio e design modulare</p>
-      </div>
-      <div class="collection-arrow" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </a>
-    <a href="catalogo.html?cat=letto" class="collection-card">
-      <img src="images/jeanne.jpg" alt="Divano letto VIA FIRENZE — modello Jeanne" loading="lazy" width="600" height="800">
-      <div class="collection-overlay">
-        <h3>Divani Letto</h3>
-        <p>Funzionalità e bellezza</p>
-      </div>
-      <div class="collection-arrow" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </a>
+    <div class="products-grid" id="home-catalog-grid"></div>
   </div>
 </section>
 
@@ -238,13 +188,15 @@
   const navCta = document.getElementById('nav-cta-desktop');
   if (window.innerWidth > 1024) navCta.style.display = 'inline-flex';
 
-  // Render featured products (max 3, no price, no badge)
-  function renderFeatured() {
-    const products = getProducts().filter(p => p.featured).slice(0, 3);
-    const grid = document.getElementById('featured-grid');
-    if (!grid) return;
+  function categoryLabel(cat) {
+    const map = { '2-posti':'Divano 2 Posti', '3-posti':'Divano 3 Posti', 'angolare':'Divano Angolare', 'letto':'Divano Letto' };
+    return map[cat] || cat;
+  }
 
-    grid.innerHTML = products.map(p => `
+  function renderHomeCatalog() {
+    const grid = document.getElementById('home-catalog-grid');
+    if (!grid) return;
+    grid.innerHTML = getProducts().map(p => `
       <article class="product-card" onclick="location.href='prodotto.html?id=${p.id}'">
         <div class="product-card-img">
           <img src="${p.immagini[0]}" alt="${p.nome}" loading="lazy">
@@ -258,12 +210,7 @@
     `).join('');
   }
 
-  function categoryLabel(cat) {
-    const map = { '2-posti':'Divano 2 Posti', '3-posti':'Divano 3 Posti', 'angolare':'Divano Angolare', 'letto':'Divano Letto' };
-    return map[cat] || cat;
-  }
-
-  renderFeatured();
+  renderHomeCatalog();
 </script>
 <script src="js/cookies.js"></script>
 <script src="js/performance.js"></script>
