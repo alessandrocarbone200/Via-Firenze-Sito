@@ -201,11 +201,11 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   overflow: hidden;
 }
 
-/* Hero con sfondo vinaccia (default) */
+/* Hero con immagine di sfondo */
 .hero-solid .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 38%, #6d3a52 0%, #5C3044 55%, #3a1d2d 100%);
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/home-banner.jpg') center/cover no-repeat;
 }
 
 .hero-content {
