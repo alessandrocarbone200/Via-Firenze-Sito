@@ -8,7 +8,7 @@
   --color-off-white: #F8F5F1;
   --color-beige:     #EDE8DF;
   --color-beige-mid: #C9B99A;
-  --color-gold:      #5C3044;
+  --color-gold:      #56303F;
   --color-dark:      #1C1C1A;
   --color-mid:       #4A4A46;
   --color-light:     #8A8A82;
@@ -97,7 +97,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   background: var(--color-gold);
   color: var(--color-white);
 }
-.btn-gold:hover { background: #4a2537; }
+.btn-gold:hover { background: #3E2230; }
 
 .btn-light {
   background: var(--color-white);
@@ -546,7 +546,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   transform: scale(1.04);
 }
 .catalog-banner-content {
-  background: #5C3044;
+  background: #56303F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -678,7 +678,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 /* ─── Page Header ────────────────────────────────────────────── */
 .page-header {
   padding: 140px 0 80px;
-  background: #5C3044;
+  background: #56303F;
   text-align: center;
   border-bottom: none;
 }
@@ -1043,101 +1043,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   color: #388e3c;
 }
 
-/* ─── Admin ──────────────────────────────────────────────────── */
-.admin-login {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-off-white);
-}
-
-.admin-login-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  padding: 52px;
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-}
-
-.admin-login-card h2 { margin-bottom: 8px; }
-.admin-login-card p  { color: var(--color-light); margin-bottom: 32px; }
-
-.admin-panel { display: none; min-height: 100vh; background: var(--color-off-white); }
-
-.admin-header {
-  background: var(--color-dark);
-  color: var(--color-white);
-  padding: 0 40px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.admin-header h1 { font-size: 1.1rem; font-weight: 600; }
-
-.admin-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 48px 40px;
-  display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.admin-form-card, .admin-products-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  padding: 36px;
-}
-
-.admin-form-card h3, .admin-products-card h3 {
-  font-size: 1rem;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.admin-product-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.admin-product-row:last-child { border-bottom: none; }
-
-.admin-product-img {
-  width: 60px;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  background: var(--color-beige);
-  flex-shrink: 0;
-}
-
-.admin-product-info { flex: 1; min-width: 0; }
-.admin-product-info strong { display: block; font-size: 0.92rem; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.admin-product-info span  { font-size: 0.78rem; color: var(--color-light); }
-
-.btn-delete {
-  background: none;
-  border: 1px solid #e0b0b0;
-  color: #c0392b;
-  padding: 6px 14px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: var(--transition);
-  flex-shrink: 0;
-}
-
-.btn-delete:hover { background: #c0392b; color: white; border-color: #c0392b; }
-
 /* ─── Toast ──────────────────────────────────────────────────── */
 .toast {
   position: fixed;
@@ -1225,7 +1130,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   .filter-sidebar   { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .testimonials-grid { grid-template-columns: 1fr 1fr; }
   .contact-layout   { grid-template-columns: 1fr; }
-  .admin-body       { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1250,6 +1154,4 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   .promo-banner     { height: auto; padding: 60px 0; }
   .promo-discount   { font-size: 3.5rem; }
   .section          { padding: 60px 0; }
-  .admin-body       { padding: 24px 20px; }
-  .admin-form-card, .admin-products-card { padding: 24px; }
 }
