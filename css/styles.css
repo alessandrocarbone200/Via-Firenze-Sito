@@ -110,9 +110,9 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.97);
+  background: #5C3044;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: none;
   transition: var(--transition);
 }
 
@@ -134,6 +134,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 }
 
 .nav-logo svg { height: 36px; width: auto; }
+.nav-logo-img { filter: brightness(0) invert(1); }
 
 .nav-logo-text {
   font-family: var(--font-serif);
@@ -156,7 +157,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-mid);
+  color: rgba(255,255,255,0.72);
   transition: color var(--transition);
   position: relative;
   padding-bottom: 4px;
@@ -167,11 +168,11 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   position: absolute;
   bottom: 0; left: 0;
   width: 0; height: 1.5px;
-  background: var(--color-gold);
+  background: rgba(255,255,255,0.8);
   transition: width var(--transition);
 }
 
-.nav-link:hover, .nav-link.active { color: var(--color-dark); }
+.nav-link:hover, .nav-link.active { color: #fff; }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
 .nav-cta { margin-left: 12px; }
@@ -187,7 +188,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 .hamburger span {
   display: block;
   width: 24px; height: 1.5px;
-  background: var(--color-dark);
+  background: rgba(255,255,255,0.85);
   transition: var(--transition);
 }
 
@@ -1140,7 +1141,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   #scheda-content > div { grid-template-columns: 1fr !important; }
   .container { padding: 0 20px; }
   .nav-inner { padding: 0 20px; }
-  .nav-menu  { display: none; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--color-border); padding: 24px; gap: 20px; }
+  .nav-menu  { display: none; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: #5C3044; border-bottom: none; padding: 24px; gap: 20px; }
   .nav-menu.open { display: flex; }
   .hamburger { display: flex; }
   .collections-grid { grid-template-columns: 1fr 1fr; }
