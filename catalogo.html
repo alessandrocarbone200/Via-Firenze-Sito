@@ -247,8 +247,6 @@
 <script src="js/cookies.js"></script>
 <script src="js/performance.js"></script>
 <script>
-  const CATALOG_URL = 'https://drive.google.com/uc?export=download&id=1pircWE65q-n003tQpSq_TW2i3c9Hs5m5';
-
   function openCatalogModal() {
     const modal = document.getElementById('catalog-modal');
     modal.style.display = 'flex';
@@ -261,21 +259,34 @@
     document.getElementById('catalog-modal').style.display = 'none';
   }
 
-  function checkCatalogPass() {
+  async function checkCatalogPass() {
     const val = document.getElementById('catalog-pass').value;
-    if (val === 'Via Firenze') {
-      closeCatalogModal();
-      // avvia download
-      const a = document.createElement('a');
-      a.href = CATALOG_URL;
-      a.download = 'ViaFirenze-Catalogo.pdf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } else {
-      document.getElementById('catalog-error').style.display = 'block';
-      document.getElementById('catalog-pass').value = '';
-      document.getElementById('catalog-pass').focus();
+    const errEl = document.getElementById('catalog-error');
+
+    try {
+      const res = await fetch('/api/catalogo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: val })
+      });
+
+      if (res.ok) {
+        const { url } = await res.json();
+        closeCatalogModal();
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ViaFirenze-Catalogo.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } else {
+        errEl.style.display = 'block';
+        document.getElementById('catalog-pass').value = '';
+        document.getElementById('catalog-pass').focus();
+      }
+    } catch {
+      errEl.textContent = 'Errore di connessione. Riprova.';
+      errEl.style.display = 'block';
     }
   }
 
