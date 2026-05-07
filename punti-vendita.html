@@ -76,7 +76,7 @@
         <!-- INFO + MAPPA -->
         <div>
           <span class="section-label">Sede Operativa</span>
-          <h2 style="margin-top:12px; margin-bottom:24px;">San Varano — Forlì-Cesena</h2>
+          <h2 id="pv-heading" style="margin-top:12px; margin-bottom:24px; width:fit-content; white-space:nowrap;">San Varano — Forlì-Cesena</h2>
 
           <div class="contact-detail">
             <div class="contact-detail-icon">
@@ -114,7 +114,7 @@
             </div>
           </div>
 
-          <a href="https://www.google.com/maps/place/Via+Firenze,+200,+47121+Forl%C3%AC+FC/@44.2089646,11.9996678,17z" target="_blank" rel="noopener" style="display:block; margin-top:32px; overflow:hidden; cursor:pointer; border:1px solid var(--color-border);">
+          <a id="pv-map-link" href="https://www.google.com/maps/place/Via+Firenze,+200,+47121+Forl%C3%AC+FC/@44.2089646,11.9996678,17z" target="_blank" rel="noopener" style="display:block; margin-top:32px; overflow:hidden; cursor:pointer; border:1px solid var(--color-border);">
             <img src="images/mappa.jpg" alt="Mappa Via Firenze 200 San Varano FC" style="width:100%; height:220px; object-fit:cover; display:block;">
           </a>
           <p style="font-size:0.8rem; color:var(--color-light); margin-top:8px;">
@@ -327,6 +327,15 @@
     ['f-nome','f-cognome','f-email','f-oggetto','f-messaggio'].forEach(id => { const el = document.getElementById(id); if (el) el.classList.remove('invalid'); });
     ['err-nome','err-cognome','err-email','err-oggetto','err-messaggio','err-privacy'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = ''; });
   }
+</script>
+<script>
+(function(){
+  var h=document.getElementById('pv-heading'),m=document.getElementById('pv-map-link');
+  function sync(){ if(h&&m) m.style.maxWidth=h.offsetWidth+'px'; }
+  sync();
+  if(document.fonts) document.fonts.ready.then(sync);
+  window.addEventListener('resize',sync);
+})();
 </script>
 <script src="js/cookies.js?v=1" defer></script>
 <script src="js/performance.js?v=1" defer></script>
