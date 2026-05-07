@@ -14,7 +14,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
     categoria: "2-posti",
-    immagini: ["images/arthur.jpg", "images/arthur_aperto.jpg", "images/arthur_detail.jpg"],
+    immagini: ["images/arthur.webp", "images/arthur_aperto.webp", "images/arthur_detail.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -60,7 +60,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello di faggio e truciolare. Meccanismo Rapidlit. Materasso da 20 cm. Disponibile in tessuto o pelle.",
     categoria: "2-posti",
-    immagini: ["images/giulia.jpg", "images/giulia_detail.jpg", "images/giulia_ouvert.jpg"],
+    immagini: ["images/giulia.webp", "images/giulia_detail.webp", "images/giulia_ouvert.webp"],
     featured: true,
     schedaTecnica: {
       materiali: {
@@ -103,7 +103,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "2-posti",
-    immagini: ["images/myto.jpg", "images/myto_aperto.jpg"],
+    immagini: ["images/myto.webp", "images/myto_aperto.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -148,7 +148,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolato. Meccanismo Rapidlit. Poggiatesta regolabile. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
-    immagini: ["images/colosseo.jpg", "images/colosseo_aperto.jpg", "images/colosseo_detail.jpg"],
+    immagini: ["images/colosseo.webp", "images/colosseo_aperto.webp", "images/colosseo_detail.webp"],
     featured: true,
     schedaTecnica: {
       materiali: {
@@ -194,7 +194,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm con fodera traspirante. Disponibile in tessuto.",
     categoria: "3-posti",
-    immagini: ["images/dallas.jpg", "images/dallas_aperto.jpg"],
+    immagini: ["images/dallas.webp", "images/dallas_aperto.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -237,7 +237,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
-    immagini: ["images/jolie.jpg", "images/jolie_2.jpg", "images/jolie_detail.jpg"],
+    immagini: ["images/jolie.webp", "images/jolie_2.webp", "images/jolie_detail.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -280,7 +280,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Materasso da 14 cm. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
-    immagini: ["images/leonardo.jpg"],
+    immagini: ["images/leonardo.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -325,7 +325,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto angolare — materasso 70 · 80 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/raffaelle.jpg", "images/raffaelle_aperto.jpg", "images/raffaelle_2.jpg", "images/raffaelle_mod.jpg"],
+    immagini: ["images/raffaelle.webp", "images/raffaelle_aperto.webp", "images/raffaelle_2.webp", "images/raffaelle_mod.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -367,7 +367,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto con chaise longue — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm. Chaise longue 160×80 cm. Disponibile in tessuto o microfibra.",
     categoria: "angolare",
-    immagini: ["images/luigi.jpg", "images/luigi_aperto.jpg"],
+    immagini: ["images/luigi.webp", "images/luigi_aperto.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -414,7 +414,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — 205 cm",
     descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/capri.jpg", "images/capri_2.jpg", "images/capri_3.jpg", "images/capri_4.jpg", "images/capri_5.jpg"],
+    immagini: ["images/capri.webp", "images/capri_2.webp", "images/capri_3.webp", "images/capri_4.webp", "images/capri_5.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -447,7 +447,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — 205 cm",
     descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/elba.jpg", "images/elba_detail.jpg"],
+    immagini: ["images/elba.webp", "images/elba_detail.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -480,7 +480,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — 205 cm",
     descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/ischia.jpg", "images/ischia_mask.jpg"],
+    immagini: ["images/ischia.webp", "images/ischia_mask.webp"],
     featured: true,
     schedaTecnica: {
       materiali: {
@@ -515,7 +515,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "letto",
-    immagini: ["images/jeanne.jpg", "images/jeanne_aperto.jpg", "images/jeanne_detail.jpg", "images/jeanne_particolare.jpg"],
+    immagini: ["images/jeanne.webp", "images/jeanne_aperto.webp", "images/jeanne_detail.webp", "images/jeanne_particolare.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -558,10 +558,10 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto con poggiatesta — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Poggiatesta regolabile incluso. Disponibile in tessuto o pelle.",
     categoria: "letto",
-    immagini: ["images/luca_intero.jpg?v=20260507-1", "images/luca_grigio_aperto.jpg?v=20260507-1", "images/luca_grigio_3.jpg", "images/luca_grigio_4.jpg"],
+    immagini: ["images/luca_intero.webp?v=20260507-1", "images/luca_grigio_aperto.webp?v=20260507-1", "images/luca_grigio_3.webp", "images/luca_grigio_4.webp"],
     colori: [
-      { nome: "Grigio", hex: "#8496A9", immagini: ["images/luca_intero.jpg?v=20260507-1", "images/luca_grigio_aperto.jpg?v=20260507-1", "images/luca_grigio_3.jpg", "images/luca_grigio_4.jpg"] },
-      { nome: "Verde", hex: "#7A9E8A", immagini: ["images/luca_verde.jpg?v=20260507-1", "images/luca_verde_aperto.jpg?v=20260507-1"] }
+      { nome: "Grigio", hex: "#8496A9", immagini: ["images/luca_intero.webp?v=20260507-1", "images/luca_grigio_aperto.webp?v=20260507-1", "images/luca_grigio_3.webp", "images/luca_grigio_4.webp"] },
+      { nome: "Verde", hex: "#7A9E8A", immagini: ["images/luca_verde.webp?v=20260507-1", "images/luca_verde_aperto.webp?v=20260507-1"] }
     ],
     featured: false,
     schedaTecnica: {
@@ -608,7 +608,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "letto",
-    immagini: ["images/como.jpg", "images/como_aperto.jpg"],
+    immagini: ["images/como.webp", "images/como_aperto.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -652,7 +652,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
     categoria: "2-posti",
-    immagini: ["images/blanche.jpg", "images/blanche_2.jpg", "images/blanche_detail.jpg", "images/blanche_117132_mod.jpg"],
+    immagini: ["images/blanche.webp", "images/blanche_2.webp", "images/blanche_detail.webp", "images/blanche_117132_mod.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
@@ -699,7 +699,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
     categoria: "3-posti",
-    immagini: ["images/vito.jpg"],
+    immagini: ["images/vito.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
