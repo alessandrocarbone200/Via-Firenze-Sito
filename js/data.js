@@ -414,7 +414,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — 205 cm",
     descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/capri.jpg", "images/capri_2.jpg", "images/capri_3.jpg"],
+    immagini: ["images/capri.jpg", "images/capri_2.jpg", "images/capri_3.jpg", "images/capri_4.jpg", "images/capri_5.jpg"],
     featured: false,
     schedaTecnica: {
       materiali: {
