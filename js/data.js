@@ -325,7 +325,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto angolare — materasso 70 · 80 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/raffaelle.jpg", "images/raffaelle_aperto.jpg"],
+    immagini: ["images/raffaelle.jpg", "images/raffaelle_aperto.jpg", "images/raffaelle_2.jpg", "images/raffaelle_mod.jpg"],
     featured: false,
     schedaTecnica: {
       materiali: {
