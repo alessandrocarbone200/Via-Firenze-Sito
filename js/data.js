@@ -194,7 +194,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Materasso da 17 cm con fodera traspirante. Disponibile in tessuto.",
     categoria: "3-posti",
-    immagini: ["images/dallas.jpg"],
+    immagini: ["images/dallas.jpg", "images/dallas_aperto.jpg"],
     featured: false,
     schedaTecnica: {
       materiali: {
