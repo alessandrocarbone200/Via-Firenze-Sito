@@ -944,7 +944,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 /* ─── Contact Page ───────────────────────────────────────────── */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: 1.6fr 1fr;
   gap: 80px;
   padding: 80px 0;
 }
