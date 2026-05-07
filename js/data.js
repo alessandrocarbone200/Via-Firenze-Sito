@@ -647,7 +647,7 @@ const DEFAULT_PRODUCTS = [
 
   // ── JACK ────────────────────────────────────────────────
   {
-    id: 13,
+    id: 17,
     nome: "Jack",
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
@@ -694,7 +694,7 @@ const DEFAULT_PRODUCTS = [
 
   // ── VITO ────────────────────────────────────────────────
   {
-    id: 14,
+    id: 18,
     nome: "Vito",
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
