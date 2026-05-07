@@ -60,7 +60,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello di faggio e truciolare. Meccanismo Rapidlit. Materasso da 20 cm. Disponibile in tessuto o pelle.",
     categoria: "2-posti",
-    immagini: ["images/giulia.jpg", "images/giulia_detail.jpg"],
+    immagini: ["images/giulia.jpg", "images/giulia_detail.jpg", "images/giulia_ouvert.jpg"],
     featured: true,
     schedaTecnica: {
       materiali: {
