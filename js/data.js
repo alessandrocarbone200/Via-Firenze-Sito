@@ -480,7 +480,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — 205 cm",
     descrizione: "Struttura in legno massello di faggio e truciolato. Materasso da 15 cm. Disponibile in tessuto o pelle.",
     categoria: "angolare",
-    immagini: ["images/ischia.jpg"],
+    immagini: ["images/ischia.jpg", "images/ischia_mask.jpg"],
     featured: true,
     schedaTecnica: {
       materiali: {
