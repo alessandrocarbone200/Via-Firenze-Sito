@@ -205,7 +205,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 .hero-solid .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/home-banner.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/home-banner-2.png') center/cover no-repeat;
 }
 
 .hero-content {
