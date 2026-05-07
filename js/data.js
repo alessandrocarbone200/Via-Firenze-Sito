@@ -515,7 +515,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Disponibile in tessuto o pelle.",
     categoria: "letto",
-    immagini: ["images/jeanne.jpg", "images/jeanne_aperto.jpg", "images/jeanne_detail.jpg"],
+    immagini: ["images/jeanne.jpg", "images/jeanne_aperto.jpg", "images/jeanne_detail.jpg", "images/jeanne_particolare.jpg"],
     featured: false,
     schedaTecnica: {
       materiali: {
