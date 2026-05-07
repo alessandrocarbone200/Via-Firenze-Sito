@@ -1122,6 +1122,27 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
 
 .no-results h3 { margin-bottom: 8px; color: var(--color-mid); }
 
+/* ─── Punto Vendita — Photo Strip ────────────────────────────── */
+.pv-photo-strip {
+  margin-top: 40px;
+  background: #fff;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.pv-photo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  height: 270px;
+}
+.pv-photo-strip-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .collections-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1158,4 +1179,10 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
   .promo-banner     { height: auto; padding: 60px 0; }
   .promo-discount   { font-size: 3.5rem; }
   .section          { padding: 60px 0; }
+  .hero             { height: 65vh; min-height: 480px; }
+  .pv-photo-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
 }
