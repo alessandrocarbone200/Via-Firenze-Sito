@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(cp -r \"/c/Users/feder/AppData/Local/Temp/via-firenze-repo/css\" \"/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/\")",
+      "Bash(cp -r \"/c/Users/feder/AppData/Local/Temp/via-firenze-repo/js\" \"/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/\")",
+      "Bash(cp -r \"/c/Users/feder/AppData/Local/Temp/via-firenze-repo/images\" \"/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/\")",
+      "Bash(rm -f '/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/styles.css' '/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/arthur.jpg' '/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/arthur_aperto.jpg' '/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/arthur_detail.jpg' '/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/blanche.jpg' '/c/Users/feder/Documents/Claude/Projects/Sito Via Firenze/-arthur.jpg.url')",
+      "Bash(rm -rf \"/c/Users/feder/AppData/Local/Temp/via-firenze-repo\")",
+      "WebFetch(domain:via-firenze-sito-eight.vercel.app)"
+    ]
+  }
+}
