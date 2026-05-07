@@ -31,7 +31,7 @@
   <link rel="preload" as="image" href="images/logo2.png">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 
   <!-- Structured Data: CollectionPage -->
   <script type="application/ld+json">
@@ -124,30 +124,6 @@
   <div class="container">
     <div class="catalog-layout">
 
-      <!-- FILTERS -->
-      <aside class="filter-sidebar" aria-label="Filtri">
-        <div class="filter-group">
-          <div class="filter-group-title">Tipologia</div>
-          <label class="filter-option">
-            <input type="checkbox" name="cat" value="2-posti">
-            <label>Divano Letto</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="cat" value="3-posti">
-            <label>Divano Letto</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="cat" value="angolare">
-            <label>Divano Letto</label>
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="cat" value="letto">
-            <label>Divano Letto</label>
-          </label>
-        </div>
-
-        <button class="filter-reset" id="reset-filters">✕ Rimuovi filtri</button>
-      </aside>
 
       <!-- PRODUCTS -->
       <section aria-label="Lista prodotti">
@@ -220,25 +196,8 @@
     'letto':    'Divano Letto'
   };
 
-  // Pre-check filter from URL param
-  const urlParams = new URLSearchParams(location.search);
-  const urlCat    = urlParams.get('cat');
-  if (urlCat) {
-    const cb = document.querySelector(`input[name="cat"][value="${urlCat}"]`);
-    if (cb) cb.checked = true;
-  }
-
-  function getActiveFilters() {
-    const cats = [...document.querySelectorAll('input[name="cat"]:checked')].map(i => i.value);
-    return { cats };
-  }
-
   function applyFilters(products) {
-    const { cats } = getActiveFilters();
-    return products.filter(p => {
-      if (cats.length && !cats.includes(p.categoria)) return false;
-      return true;
-    });
+    return products;
   }
 
   function sortProducts(products) {
@@ -281,14 +240,7 @@
   }
 
   // Event listeners
-  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', renderProducts);
-  });
   document.getElementById('sort-select').addEventListener('change', renderProducts);
-  document.getElementById('reset-filters').addEventListener('click', () => {
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-    renderProducts();
-  });
 
   renderProducts();
 </script>
