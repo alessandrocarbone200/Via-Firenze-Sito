@@ -652,7 +652,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in legno massello e truciolare. Meccanismo Rapidlit. Rivestimento in tessuto. Piedi in legno tinta wengé.",
     categoria: "2-posti",
-    immagini: ["images/blanche.webp", "images/blanche_2.webp", "images/blanche_detail.webp", "images/blanche_117132_mod.webp"],
+    immagini: ["images/blanche.webp", "images/blanche_2.webp", "images/blanche_detail.webp"],
     featured: false,
     schedaTecnica: {
       materiali: {
