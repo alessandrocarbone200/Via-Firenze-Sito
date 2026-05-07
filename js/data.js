@@ -558,7 +558,11 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto con poggiatesta — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolare. Meccanismo elettrosaldato. Poggiatesta regolabile incluso. Disponibile in tessuto o pelle.",
     categoria: "letto",
-    immagini: ["images/luca_intero.jpg", "images/luca_aperto.jpg"],
+    immagini: ["images/luca_intero.jpg", "images/luca_grigio_aperto.jpg"],
+    colori: [
+      { nome: "Grigio", hex: "#8496A9", immagini: ["images/luca_intero.jpg", "images/luca_grigio_aperto.jpg"] },
+      { nome: "Verde", hex: "#7A9E8A", immagini: ["images/luca_verde.jpg", "images/luca_verde_aperto.jpg"] }
+    ],
     featured: false,
     schedaTecnica: {
       materiali: {

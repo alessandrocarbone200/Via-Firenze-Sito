@@ -95,6 +95,12 @@
         <span class="section-label" id="prod-category"></span>
         <h1 id="prod-name"></h1>
 
+        <!-- COLOR SWATCHES -->
+        <div id="color-swatches-container" style="display:none; margin:20px 0 0;">
+          <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-mid); margin-bottom:10px;">Colore: <span id="color-name-label" style="color:var(--color-dark);"></span></div>
+          <div id="color-swatches" style="display:flex; gap:10px;"></div>
+        </div>
+
         <div class="divider"></div>
 
         <!-- CTA -->
@@ -232,22 +238,55 @@
 
     // Gallery
     const mainImg = document.getElementById('gallery-main-img');
-    mainImg.src = product.immagini[0];
-    mainImg.alt = product.nome;
-
     const thumbsEl = document.getElementById('gallery-thumbs');
-    product.immagini.forEach((src, i) => {
-      const div = document.createElement('div');
-      div.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
-      div.innerHTML = `<img src="${src}" alt="${product.nome} vista ${i+1}" loading="lazy">`;
-      div.addEventListener('click', () => {
-        mainImg.style.opacity = '0';
-        setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 150);
-        thumbsEl.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-        div.classList.add('active');
+
+    function renderGallery(immagini) {
+      mainImg.src = immagini[0];
+      mainImg.alt = product.nome;
+      thumbsEl.innerHTML = '';
+      immagini.forEach((src, i) => {
+        const div = document.createElement('div');
+        div.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+        div.innerHTML = `<img src="${src}" alt="${product.nome} vista ${i+1}" loading="lazy">`;
+        div.addEventListener('click', () => {
+          mainImg.style.opacity = '0';
+          setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 150);
+          thumbsEl.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+          div.classList.add('active');
+        });
+        thumbsEl.appendChild(div);
       });
-      thumbsEl.appendChild(div);
-    });
+    }
+
+    renderGallery(product.immagini);
+
+    // Color swatches
+    if (product.colori && product.colori.length > 0) {
+      const swatchContainer = document.getElementById('color-swatches-container');
+      const swatchesEl = document.getElementById('color-swatches');
+      const colorLabel = document.getElementById('color-name-label');
+      swatchContainer.style.display = 'block';
+      colorLabel.textContent = product.colori[0].nome;
+
+      product.colori.forEach((colore, i) => {
+        const btn = document.createElement('button');
+        btn.title = colore.nome;
+        btn.setAttribute('aria-label', colore.nome);
+        btn.style.cssText = `width:30px;height:30px;border-radius:50%;background:${colore.hex};cursor:pointer;border:2px solid ${i===0?'var(--color-dark)':'var(--color-border)'};outline:2px solid ${i===0?'var(--color-dark)':'transparent'};outline-offset:2px;transition:all 0.2s;`;
+        btn.addEventListener('click', () => {
+          colorLabel.textContent = colore.nome;
+          swatchesEl.querySelectorAll('button').forEach(b => {
+            b.style.border = '2px solid var(--color-border)';
+            b.style.outline = '2px solid transparent';
+          });
+          btn.style.border = '2px solid var(--color-dark)';
+          btn.style.outline = '2px solid var(--color-dark)';
+          mainImg.style.opacity = '0';
+          setTimeout(() => renderGallery(colore.immagini), 150);
+        });
+        swatchesEl.appendChild(btn);
+      });
+    }
 
     // Scheda tecnica — multilingue
     const st = product.schedaTecnica;
