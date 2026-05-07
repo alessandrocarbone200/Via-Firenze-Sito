@@ -18,7 +18,8 @@
       "Bash(python3 *)",
       "Bash(git commit -m 'Aggiungi titolo Inviaci un messaggio al form in punti-vendita *)",
       "Bash(git commit -m 'Rimuovi voce Contatti dal menu di navigazione in tutte le pagine *)",
-      "Bash(git commit -m 'Rinomina Punti Vendita → Punto Vendita in tutto il sito *)"
+      "Bash(git commit -m 'Rinomina Punti Vendita → Punto Vendita in tutto il sito *)",
+      "Bash(git commit -m 'Footer: lascia solo Divani Letto sotto Collezioni in tutte le pagine *)"
     ]
   }
 }
