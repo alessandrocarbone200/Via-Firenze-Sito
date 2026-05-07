@@ -19,7 +19,10 @@
       "Bash(git commit -m 'Aggiungi titolo Inviaci un messaggio al form in punti-vendita *)",
       "Bash(git commit -m 'Rimuovi voce Contatti dal menu di navigazione in tutte le pagine *)",
       "Bash(git commit -m 'Rinomina Punti Vendita → Punto Vendita in tutto il sito *)",
-      "Bash(git commit -m 'Footer: lascia solo Divani Letto sotto Collezioni in tutte le pagine *)"
+      "Bash(git commit -m 'Footer: lascia solo Divani Letto sotto Collezioni in tutte le pagine *)",
+      "Bash(git commit -m 'Riduci spazio tra photo strip e sezione contatti in punto-vendita *)",
+      "Bash(powershell -Command \"\\(Get-Item 'css/styles.css'\\).Length / 1KB\")",
+      "Bash(powershell -Command \"\\(Get-Item 'js/main.js'\\).Length / 1KB; \\(Get-Item 'js/data.js'\\).Length / 1KB; \\(Get-Item 'js/cookies.js'\\).Length / 1KB; \\(Get-Item 'js/performance.js' -ErrorAction SilentlyContinue\\).Length / 1KB 2>&1\")"
     ]
   }
 }
