@@ -28,10 +28,11 @@
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/logo2.png">
+  <link rel="preload" as="image" href="images/home-banner-2.png" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;700&display=swap">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 
   <!-- Structured Data: Organization -->
   <script type="application/ld+json">
@@ -81,7 +82,8 @@
 
 <!-- HERO -->
 <section class="hero hero-solid" aria-label="Hero">
-  <div class="hero-bg"></div>
+  <img class="hero-bg" src="images/home-banner-2.png" alt="" fetchpriority="high" decoding="async" width="1920" height="1080">
+  <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content hero-content-centered">
     <h1>L'arte italiana<br>del comfort</h1>
     <p class="hero-sub">I nostri divani letto nascono da un'attenta progettazione che mette al centro le esigenze di comfort, praticità ed estetica. Ogni modello si integra con naturale eleganza negli ambienti della casa, unendo la funzionalità di un letto alla raffinatezza di un divano dal design curato.</p>
@@ -180,7 +182,7 @@
 
   renderHomeCatalog();
 </script>
-<script src="js/cookies.js"></script>
-<script src="js/performance.js"></script>
+<script src="js/cookies.js?v=1" defer></script>
+<script src="js/performance.js?v=1" defer></script>
 </body>
 </html>
