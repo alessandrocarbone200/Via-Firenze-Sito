@@ -4,6 +4,12 @@
 //  Non modificare testi senza consultare il catalogo.
 // ============================================================
 
+// Pulizia chiavi localStorage non più usate (rimuovere dopo luglio 2026)
+try {
+  localStorage.removeItem('viaFirenzeProducts');
+  localStorage.removeItem('viaFirenzeVersion');
+} catch (_) {}
+
 const DEFAULT_PRODUCTS = [
 
   // ── 2 POSTI ─────────────────────────────────────────────
@@ -741,50 +747,12 @@ const DEFAULT_PRODUCTS = [
 
 ];
 
-// ── Storage helpers ───────────────────────────────────────
-
-const STORE_KEY   = 'viaFirenzeProducts';
-const VERSION_KEY = 'viaFirenzeVersion';
-const CATALOG_VER = '2026-05-07-webp';
+// ── Product helpers ───────────────────────────────────────
 
 function getProducts() {
-  if (localStorage.getItem(VERSION_KEY) !== CATALOG_VER) {
-    localStorage.setItem(STORE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
-    localStorage.setItem(VERSION_KEY, CATALOG_VER);
-    return DEFAULT_PRODUCTS;
-  }
-  const stored = localStorage.getItem(STORE_KEY);
-  if (!stored) {
-    localStorage.setItem(STORE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
-    return DEFAULT_PRODUCTS;
-  }
-  return JSON.parse(stored);
-}
-
-function saveProducts(products) {
-  localStorage.setItem(STORE_KEY, JSON.stringify(products));
-}
-
-function addProduct(product) {
-  const products = getProducts();
-  const maxId = products.reduce((max, p) => Math.max(max, p.id), 0);
-  product.id = maxId + 1;
-  products.push(product);
-  saveProducts(products);
-  return product;
-}
-
-function deleteProduct(id) {
-  const products = getProducts().filter(p => p.id !== id);
-  saveProducts(products);
+  return DEFAULT_PRODUCTS;
 }
 
 function getProductById(id) {
-  return getProducts().find(p => p.id === parseInt(id));
-}
-
-function resetProducts() {
-  localStorage.removeItem(STORE_KEY);
-  localStorage.removeItem(VERSION_KEY);
-  return getProducts();
+  return DEFAULT_PRODUCTS.find(p => p.id === parseInt(id));
 }
