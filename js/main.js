@@ -1,5 +1,31 @@
 /* Shared utilities used across all pages */
 
+const VF_ASSET_VERSION = '20260508-1';
+
+function clearLegacyBrowserCaches() {
+  const cleanupKey = 'vf_legacy_cache_cleanup';
+
+  try {
+    if (localStorage.getItem(cleanupKey) === VF_ASSET_VERSION) return;
+  } catch (_) {}
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations()
+      .then(registrations => Promise.all(registrations.map(registration => registration.unregister())))
+      .catch(() => {});
+  }
+
+  if ('caches' in window) {
+    caches.keys()
+      .then(keys => Promise.all(keys.map(key => caches.delete(key))))
+      .catch(() => {});
+  }
+
+  try {
+    localStorage.setItem(cleanupKey, VF_ASSET_VERSION);
+  } catch (_) {}
+}
+
 function showToast(message, duration = 3000) {
   let toast = document.getElementById('toast');
   if (!toast) {
@@ -42,6 +68,7 @@ function initScrollNav() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  clearLegacyBrowserCaches();
   setActiveNavLink();
   initHamburger();
   initScrollNav();

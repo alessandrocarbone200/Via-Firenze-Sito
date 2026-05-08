@@ -749,10 +749,32 @@ const DEFAULT_PRODUCTS = [
 
 // ── Product helpers ───────────────────────────────────────
 
+const PRODUCT_IMAGE_VERSION = '20260508-1';
+
+function versionProductImage(src) {
+  if (!src || src.includes('?')) return src;
+  return `${src}?v=${PRODUCT_IMAGE_VERSION}`;
+}
+
+function versionProduct(product) {
+  return {
+    ...product,
+    immagini: (product.immagini || []).map(versionProductImage),
+    colori: product.colori
+      ? product.colori.map(colore => ({
+          ...colore,
+          immagini: (colore.immagini || []).map(versionProductImage)
+        }))
+      : product.colori
+  };
+}
+
+const PRODUCTS = DEFAULT_PRODUCTS.map(versionProduct);
+
 function getProducts() {
-  return DEFAULT_PRODUCTS;
+  return PRODUCTS;
 }
 
 function getProductById(id) {
-  return DEFAULT_PRODUCTS.find(p => p.id === parseInt(id));
+  return PRODUCTS.find(p => p.id === parseInt(id));
 }
