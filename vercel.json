@@ -36,7 +36,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "no-cache, must-revalidate"
         }
       ]
     },
@@ -46,7 +46,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "no-cache, must-revalidate"
         }
       ]
     },
@@ -56,7 +56,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=604800, stale-while-revalidate=86400"
+          "value": "no-cache, must-revalidate"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "no-cache, must-revalidate"
         }
       ]
     },
@@ -76,7 +76,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=604800, stale-while-revalidate=86400"
+          "value": "no-cache, must-revalidate"
         }
       ]
     },
@@ -86,7 +86,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "no-cache, must-revalidate"
         }
       ]
     },
@@ -96,7 +96,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "no-cache, must-revalidate"
         }
       ]
     }
