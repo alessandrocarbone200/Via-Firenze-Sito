@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "node scripts/apply-cache-version.js"
+  }
+}
