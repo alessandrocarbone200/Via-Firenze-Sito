@@ -154,7 +154,7 @@ const DEFAULT_PRODUCTS = [
     sottotitolo: "Divano letto — materasso 120 · 140 · 160 cm",
     descrizione: "Struttura in faggio massello e truciolato. Meccanismo Rapidlit. Poggiatesta regolabile. Disponibile in tessuto o pelle.",
     categoria: "3-posti",
-    immagini: ["images/colosseo.webp", "images/colosseo_aperto.webp", "images/colosseo_detail.webp"],
+    immagini: ["images/colosseo.webp", "images/colosseo_detail.webp", "images/colosseo_aperto.webp"],
     featured: true,
     schedaTecnica: {
       materiali: {
