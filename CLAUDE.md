@@ -56,6 +56,18 @@ Quando l'utente carica nuove foto da inserire nel sito:
 
 ---
 
+## Deploy — regola obbligatoria
+
+**Dopo ogni modifica ai file del sito, eseguire sempre questi passaggi:**
+
+1. `git add` dei file modificati
+2. `git commit` con messaggio descrittivo
+3. `git push origin main` — il push su GitHub triggera automaticamente il deploy su Vercel
+
+Non considerare una modifica completata finché non è stata pushata su GitHub e il sito è aggiornato online.
+
+---
+
 ## Cosa NON fare
 
 - Non aggiungere funzionalità non richieste
